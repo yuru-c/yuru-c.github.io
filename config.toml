@@ -35,9 +35,9 @@ defaultContentLanguage = "zh-tw"
         url = "/about"
       [[languages.zh-tw.menu.main]]
         identifier = "showcase"
-        name = "XXX"
+        name = "作品"
         url = "/showcase"
       [[languages.zh-tw.menu.main]]
         identifier = "posts"
-        name = "XXX"
+        name = "文章"
         url = "/hello"

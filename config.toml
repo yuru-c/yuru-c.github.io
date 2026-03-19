@@ -8,11 +8,11 @@ defaultContentLanguage = "zh-tw"
   unsafe = true
 
 [params]
+  themeColor = "green"
   contentTypeName = "posts"
   showMenuItems = 2
   fullWidthTheme = false
   centerTheme = false
-  themeColor = "green"
 
 [languages]
   [languages.zh-tw]

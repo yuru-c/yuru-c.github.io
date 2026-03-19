@@ -8,12 +8,11 @@ defaultContentLanguage = "zh-tw"
   unsafe = true
 
 [params]
-  Color = "pink"
+  customCSS = ["css/custom.css"]
   contentTypeName = "posts"
   showMenuItems = 2
   fullWidthTheme = false
   centerTheme = false
-  customCSS = ["css/custom.css"]
 
 [languages]
   [languages.zh-tw]

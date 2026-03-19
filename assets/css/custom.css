@@ -3,9 +3,9 @@ body {
 }
 
 :root {
-  --background: #fff0c5;
-  --foreground: #eceae5;
-  --accent: #06a06a;
+  --background: #fff0c5 !important;
+  --foreground: #eceae5 !important;
+  --accent: #06a06a !important;
   --font-size: 1rem;
   --line-height: 1.54em;
   --radius: 0;

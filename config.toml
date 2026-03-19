@@ -8,7 +8,7 @@ defaultContentLanguage = "zh-tw"
   unsafe = true
 
 [params]
-  Color = "green"
+  Color = "pink"
   contentTypeName = "posts"
   showMenuItems = 2
   fullWidthTheme = false

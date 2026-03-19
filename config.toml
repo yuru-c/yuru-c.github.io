@@ -1,5 +1,4 @@
 baseurl = "https://yuru-c.github.io/"
-themeColor = "green"
 languageCode = "zh-tw"
 theme = "terminal"
 pagination.pagerSize = 5
@@ -9,7 +8,7 @@ defaultContentLanguage = "zh-tw"
   unsafe = true
 
 [params]
-  themeColor = "green"
+  Color = "green"
   contentTypeName = "posts"
   showMenuItems = 2
   fullWidthTheme = false

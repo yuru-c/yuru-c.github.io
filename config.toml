@@ -13,6 +13,7 @@ defaultContentLanguage = "zh-tw"
   showMenuItems = 2
   fullWidthTheme = false
   centerTheme = false
+  customCSS = ["css/custom.css"]
 
 [languages]
   [languages.zh-tw]

@@ -2,6 +2,7 @@ baseurl = "https://yuru-c.github.io/"
 languageCode = "zh-tw"
 theme = "terminal"
 pagination.pagerSize = 5
+defaultContentLanguage = "zh-tw"
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -11,9 +12,10 @@ pagination.pagerSize = 5
   showMenuItems = 2
   fullWidthTheme = false
   centerTheme = false
+  themeColor = "green"
 
 [languages]
-  [languages.zh]
+  [languages.zh-tw]
     title = "yuru's Portfolio"
     subtitle = "A simple, retro theme for Hugo"
     keywords = ""
@@ -22,16 +24,16 @@ pagination.pagerSize = 5
     readMore = "閱讀全文"
     readOtherPosts = "閱讀其他文章"
 
-    [languages.zh.params.logo]
+    [languages.zh-tw.params.logo]
       logoText = "yuru>_"
       logoHomeLink = "/"
 
-    [languages.zh.menu]
-      [[languages.zh.menu.main]]
+    [languages.zh-tw.menu]
+      [[languages.zh-tw.menu.main]]
         identifier = "about"
         name = "關於我"
         url = "/about"
-      [[languages.zh.menu.main]]
+      [[languages.zh-tw.menu.main]]
         identifier = "showcase"
         name = "XXX"
         url = "/showcase"

@@ -40,4 +40,4 @@ defaultContentLanguage = "zh-tw"
       [[languages.zh-tw.menu.main]]
         identifier = "posts"
         name = "文章"
-        url = "/hello"
+        url = "/posts"

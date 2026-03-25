@@ -1,0 +1,321 @@
+{{ define "main" }}
+<div id="loading-splash">
+  <div class="loading-container">
+    <div class="loading-pulse"></div> 
+    
+    <div class="typing-wrapper">
+      <p class="typing-text">E N T E R . . .</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* 基礎設定：防止重新整理時閃爍或看到捲動軸 */
+  body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  #loading-splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f4ed; /* 建議與你網頁背景一致 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.8s ease, visibility 0.8s;
+  }
+
+  #loading-splash.hide-splash {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .loading-container { 
+    text-align: center;
+    transition: opacity 0.5s ease; 
+  }
+
+  /* 2. 空心圓環樣式 */
+  .loading-pulse {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: 6px solid #6d5d4b;
+    border-radius: 50%;
+    margin: 0 auto 50px;
+    position: relative;
+    box-shadow: 
+        0 0 10px rgba(154, 121, 121, 0.4),
+        inset 0 0 5px rgba(154, 121, 121, 0.2);
+    animation: pulseGlow 2s infinite ease-in-out;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+  }
+
+  /* 消失時的擴散效果 */
+  .pulse-exit {
+    transform: scale(4);
+    border-width: 1px;
+    opacity: 0;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 20px rgba(154, 121, 121, 0.6); }
+  }
+
+  /* 3. 打字機樣式 */
+  .typing-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .typing-text {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold; 
+    color: #444;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 22ch;
+    border-right: 3px solid #444;
+    animation: 
+      typing 1.5s steps(9, end) forwards,
+      blink-fast 0.17s step-end 8,
+      blink-slow 0.8s step-end infinite 1.5s;
+  }
+  
+  @keyframes typing { from { width: 0 } to { width: 22ch } }
+  @keyframes blink-fast { 0%, 100% { border-color: #444; } 50% { border-color: transparent; } }
+  @keyframes blink-slow { 0%, 100% { border-color: #444; } 50% { border-color: transparent; } }
+</style>
+
+<script>
+  // --- A. 強制初始化：最優先執行的回頂部邏輯 ---
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 再次確保座標歸零並鎖定捲動
+    window.scrollTo(0, 0);
+    document.body.classList.add('no-scroll');
+
+    // 設定自動進入計時器
+    const autoEntry = setTimeout(() => {
+      dismissSplash();
+    }, 2800); // 稍微加長一點讓打字機跑完
+
+    // 點擊事件
+    document.addEventListener('click', () => {
+      clearTimeout(autoEntry);
+      dismissSplash();
+    }, { once: true });
+  });
+
+  // --- B. 核心：關閉開場動畫與座標校正 ---
+  function dismissSplash() {
+    const splash = document.getElementById('loading-splash');
+    const pulse = document.querySelector('.loading-pulse');
+    const container = document.querySelector('.loading-container');
+    
+    if (splash && !splash.classList.contains('hide-splash')) {
+      // 觸發空心圓擴散消失
+      if (pulse) pulse.classList.add('pulse-exit'); 
+      
+      container.style.transition = 'opacity 0.8s ease';
+      container.style.opacity = '0';
+      
+      setTimeout(() => {
+        splash.classList.add('hide-splash');
+        document.body.classList.remove('no-scroll');
+
+        // 【關鍵】在捲動恢復的瞬間，強制歸零座標
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'instant' 
+        });
+
+        // 二次保險：處理非同步渲染偏移
+        requestAnimationFrame(() => {
+          window.scrollTo(0, 0);
+        });
+
+      }, 800); 
+    }
+  }
+
+  // --- C. 互動監聽：滑鼠滾動與觸控 ---
+  window.addEventListener('wheel', (e) => {
+    // 當使用者往下滾動時觸發進入
+    if (e.deltaY > 0) {
+        dismissSplash();
+    }
+  }, { passive: true });
+
+  let touchStart = 0;
+  window.addEventListener('touchstart', (e) => { 
+    touchStart = e.touches[0].pageY; 
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    // 當手指向上滑動（內容向下滾動）超過 5px 時觸發
+    if (touchStart > e.touches[0].pageY + 5) {
+        dismissSplash();
+    }
+  }, { passive: true });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.profile-pic-wrapper');
+    const apic = document.getElementById('avatar');
+    const pic = document.querySelector('.profile-pic');
+    
+    if (!wrapper || !apic || !pic) return;
+
+    let isRunning = false;
+
+    const performFlip = () => {
+        if (isRunning) return; // 動畫執行中，防止連續點擊
+        isRunning = true;
+
+        // 1. 開始動畫 (加上 class)
+        pic.classList.add('is-animating');
+
+        // 2. 在動畫轉到側面 (90度) 的瞬間換圖
+        // 0.8s 的一半是 400ms
+        setTimeout(() => {
+            if (apic.src.match(/cat1/)) {
+                apic.src = "/img/avatar.png";
+            } else {
+                apic.src = "/img/cat1.png";
+            }
+        }, 400);
+
+        // 3. 動畫結束後移除 class，並恢復可點擊狀態
+        setTimeout(() => {
+            pic.classList.remove('is-animating');
+            isRunning = false;
+        }, 850); 
+    };
+
+    // 電腦與手機統一：點擊 wrapper 就觸發
+    wrapper.addEventListener('click', (e) => {
+        // 如果你的圖片在 <a> 標籤內，可以視需求決定是否阻止預設行為
+        // e.preventDefault(); 
+        performFlip();
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const steps = document.querySelectorAll('.step-box');
+    const overlay = document.getElementById('excelOverlay');
+    let currentStep = 0;
+    
+    // --- 1. 輪流閃爍邏輯 ---
+    const stepInterval = setInterval(() => {
+      // 移除所有人的 active
+      steps.forEach(s => s.classList.remove('active'));
+      // 亮起當前這一個
+      steps[currentStep].classList.add('active');
+      // 下一個
+      currentStep = (currentStep + 1) % steps.length;
+    }, 5000);
+
+    // --- 2. 點擊解鎖邏輯 ---
+    overlay.addEventListener('click', () => {
+      // 停止輪流閃爍
+      clearInterval(stepInterval);
+      
+      // 移除遮罩
+      overlay.style.opacity = '0';
+      overlay.style.pointerEvents = 'none';
+      
+      // 讓所有步驟呈現「已解鎖」的微亮狀態
+      steps.forEach(s => {
+        s.classList.add('active');
+        s.style.transform = 'scale(1)';
+        s.style.opacity = '0.8';
+      });
+      
+      console.log("Excel 展示模式已啟動");
+    });
+  });
+
+
+
+</script>
+
+  {{ if .Content }}
+    <div class="index-content {{ if .Params.framed -}}framed{{- end -}}">
+      {{ .Content }}
+    </div>
+  {{ end }}
+  <div class="posts">
+    {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName " ") "")) }}
+    {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
+
+    {{ $PageContext := . }}
+    {{ if .IsHome }}
+      {{ $PageContext = .Site }}
+    {{ end }}
+    {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
+
+    {{ range $paginator.Pages }}
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+        </h2>
+
+        <div class="post-meta">
+          {{- if .Date -}}
+            <time class="post-date">
+              {{- partial "post-date" . -}}
+            </time>
+          {{- end -}}
+          {{- with .Params.Author -}}
+            <span class="post-author">{{ . }}</span>
+          {{- end -}}
+        </div>
+
+        {{ if .Params.tags }}
+          <span class="post-tags">
+            {{ range .Params.tags }}
+            #<a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
+              {{- . -}}
+            </a>&nbsp;
+            {{ end }}
+          </span>
+        {{ end }}
+
+        {{ partial "cover.html" . }}
+
+        <div class="post-content">
+          {{ if .Params.showFullContent }}
+            {{ .Content }}
+          {{ else if .Description }}
+            <p>{{ .Description | markdownify }}</p>
+          {{ else }}
+            {{ .Content }}
+          {{ end }}
+        </div>
+
+        {{ if not .Params.showFullContent }}
+          <div>
+            <a class="read-more button inline" href="{{ .RelPermalink }}">[{{ $.Site.Params.ReadMore }}]</a>
+          </div>
+        {{ end }}
+      </article>
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+  </div>
+{{ end }}
+

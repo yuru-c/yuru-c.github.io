@@ -10,14 +10,14 @@ defaultContentLanguage = "zh-tw"
 [params]
   customCSS = ["css/custom.css"]
   contentTypeName = "posts"
-  showMenuItems = 2
+  showMenuItems = 5
   fullWidthTheme = false
   centerTheme = false
 
 [languages]
   [languages.zh-tw]
     title = "yuru's Portfolio"
-    subtitle = "A simple, retro theme for Hugo"
+    subtitle = ""
     keywords = ""
     copyright = "© 2026 yuru"
     menuMore = "顯示更多"
@@ -25,19 +25,27 @@ defaultContentLanguage = "zh-tw"
     readOtherPosts = "閱讀其他文章"
 
     [languages.zh-tw.params.logo]
-      logoText = "yuru>_"
+      logoText = " yuru "
       logoHomeLink = "/"
 
     [languages.zh-tw.menu]
       [[languages.zh-tw.menu.main]]
         identifier = "about"
         name = "關於我"
-        url = "/about"
+        url = "/#about"
+        weight = 1
       [[languages.zh-tw.menu.main]]
-        identifier = "showcase"
-        name = "作品"
-        url = "/showcase"
+        identifier = "skill"
+        name = "技能"
+        url = "/#skill"
+        weight = 2
       [[languages.zh-tw.menu.main]]
-        identifier = "posts"
-        name = "文章"
-        url = "/posts"
+        identifier = "experience"
+        name = "工作經歷"
+        url = "/#experience"
+        weight = 3
+      [[languages.zh-tw.menu.main]]
+        identifier = "research"
+        name = "研究動機"
+        url = "/#research"
+        weight = 4

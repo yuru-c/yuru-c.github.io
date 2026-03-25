@@ -68,6 +68,10 @@ html {
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 2px solid rgba(76, 45, 17, 0.5);
     padding: 15px 0;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;
 }
 
 .header__inner {
@@ -161,6 +165,10 @@ html {
     margin-left: 20px;
     flex-shrink: 0;
     align-self: center;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;
 }
 
 .profile-pic{
@@ -720,6 +728,10 @@ body {
     gap: 10px;
     margin-bottom: -1px; /* 銜接邊框 */
     z-index: 5;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;
   }
 
   /* 步驟方塊基礎樣式 */
@@ -798,7 +810,10 @@ body {
     border-radius: 0 0 15px 15px;
     overflow: hidden;
     box-shadow: 3px 0px 2px rgba(81, 51, 25, 0.2);
-    
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;
   }
 
   .excel-display {
@@ -817,6 +832,7 @@ body {
     height: 567px;  
     overflow: hidden;
     text-align: center;
+    
   }
 
   .excel-frame-container iframe {
@@ -837,6 +853,10 @@ body {
     z-index: 10;
     cursor: pointer;
     transition: all 0.5s ease;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;
   }
 
   .unlock-text {
@@ -867,6 +887,10 @@ body {
   margin-top: 20px; /* 與下方步驟保持距離 */
   padding: 0;
   width: auto;
+  -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;
 }
 
 .comparison-container {

@@ -192,10 +192,10 @@
         // 2. 在動畫轉到側面 (90度) 的瞬間換圖
         // 0.8s 的一半是 400ms
         setTimeout(() => {
-            if (apic.src.match(/cat1/)) {
-                apic.src = "/img/avatar.png";
-            } else {
+            if (apic.src.match(/avatar/)) {
                 apic.src = "/img/cat1.png";
+            } else {
+                apic.src = "/img/avatar.png";
             }
         }, 400);
 

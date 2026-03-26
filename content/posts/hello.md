@@ -19,9 +19,9 @@ draft: false
         <div class="info-wrapper">
         <ul>
             <li><span class="fa-li"><i class="fa-solid fa-envelope"></i></span><a href="mailto:shannon0137@gmail.com" class="mail">shannon0137@gmail.com</a></li>
-            <li><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span>天主教輔仁大學數學系應用數學組(111年度畢業)</li>
+            <li><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span>天主教輔仁大學數學系應用數學組</li>
                     </ul>
-        <p style="font-size:14px; left:-50px">※個人照背面QRcode指引到成績單<br>※成績單名字為CHEN,YU-JU(護照用)，非正式時個人會使用YU-RU。</p>
+        <p style="font-size:14px; left:-50px">※個人照背面指引至簡歷及成績單<br>※成績單名字為CHEN,YU-JU(護照用)，非正式時個人會使用YU-RU。</p>
         </div>
     </div>
 </div>
@@ -121,7 +121,7 @@ draft: false
         <div class="exp-dot" style="opacity: 0;"></div>
         <div class="exp-content">
         <strong>2019-2022</strong>
-        <h4 style="margin: 5px 0;">臺北大眾捷運股份有限公司 北投會館 <br>
+        <h4 style="margin: 5px 0;">捷運公司 會館 <br>
         工讀生</h4>
         <div class="exp-text">
         <p style="font-size: 15px;"><strong>職責範疇：</strong><br>負責導覽及櫃檯服務。</p>
@@ -133,8 +133,8 @@ draft: false
         <div class="exp-dot" ></div>
         <div class="exp-content">
         <strong>2022-2023</strong>
-        <h4 style="margin: 5px 0;">臺北大眾捷運股份有限公司 北投會館 <br>
-        - 杰立欣科技有限公司（2022起承攬）- <br>
+        <h4 style="margin: 5px 0;">捷運公司 會館 <br>
+        - 科技公司（2022起承攬）- <br>
         工讀生<i class="fa-solid fa-arrow-right"></i>督導</h4>
         <div class="exp-text">
         <p style="font-size: 15px;"><strong>職位晉升：</strong><br>
@@ -148,7 +148,7 @@ draft: false
         <div class="exp-dot"></div>
         <div class="exp-content">
         <strong>2023-2025</strong>
-        <h4 style="margin: 5px 0;">銘傳大學 高教深耕計畫辦公室<br>專任助理</h4>
+        <h4 style="margin: 5px 0;">北部大學 計畫辦公室<br>專任助理</h4>
         <div class="exp-text">
         <p style="font-size: 15px;"><strong>職責範疇：</strong><br>負責計畫審核、執行及核銷業務。</p>
         <p style="font-size: 15px;"><strong>核心成就：</strong><br>運用 Excel 公式建構分類與時效判斷邏輯，設計<a href="#display" style=" font-weight: bold; color: var(--accent);">「自動化申請表」</a> 。此舉將傳統人工核對轉為邏輯判定，大幅降低審核端之人為誤差，並有效優化跨年度審查的行政效率。</p>

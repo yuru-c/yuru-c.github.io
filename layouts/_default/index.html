@@ -97,6 +97,14 @@
 </style>
 
 <script>
+
+  // 在頁面載入時先下載好，防止手機版換圖瞬間「掉圖」
+const preloadThank = new Image();
+preloadThank.src = "/img/thank.png";
+
+const preloadAvatar2 = new Image();
+preloadAvatar2.src = "/img/avatar2.png";
+
   // --- A. 強制初始化：最優先執行的回頂部邏輯 ---
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';

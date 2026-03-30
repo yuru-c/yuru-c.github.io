@@ -97,8 +97,8 @@
 </style>
 
 <script>
-const imgThank = {{ "img/thank.png" | absURL }};
-    const imgAvatar = {{ "img/avatar2.png" | absURL }};
+const imgThank = {{ "img/thank.png" | relURL }};
+const imgAvatar = {{ "img/avatar2.png" | relURL }};
 
   // --- A. 強制初始化：最優先執行的回頂部邏輯 ---
   if ('scrollRestoration' in history) {

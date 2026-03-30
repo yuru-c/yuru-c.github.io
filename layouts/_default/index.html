@@ -175,36 +175,39 @@ const imgAvatar = "/img/avatar2.png";
         dismissSplash();
     }
   }, { passive: true });
-  
-document.addEventListener('DOMContentLoaded', () => {
-        const apic = document.getElementById('avatar');
-        const pic = document.querySelector('.profile-pic');
-        const wrapper = document.querySelector('.profile-pic-wrapper');
 
-        if (!apic || !pic || !wrapper) return;
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.profile-pic-wrapper');
+    const apic = document.getElementById('avatar');
+    const pic = document.querySelector('.profile-pic');
+    
+    if (!wrapper || !apic || !pic) return;
 
-        // 強制預載：防止線上環境因為抓圖延遲導致翻轉空白
-        const p1 = new Image(); p1.src = imgThank;
-        const p2 = new Image(); p2.src = imgAvatar;
+    let isRunning = false;
 
-        wrapper.addEventListener('click', () => {
-            if (pic.classList.contains('is-animating')) return;
+    const performFlip = () => {
+        if (isRunning) return; // 動畫執行中，防止連續點擊
+        isRunning = true;
 
-            pic.classList.add('is-animating');
+        // 1. 開始動畫 (加上 class)
+        pic.classList.add('is-animating');
 
-            setTimeout(() => {
-                // 線上環境判斷 src 有時會帶完整網址，所以改用「是否包含檔名」來判斷
-                if (apic.src.toLowerCase().indexOf('thank.png') > -1) {
-                    apic.src = imgAvatar;
-                } else {
-                    apic.src = imgThank;
-                }
-            }, 400);
+        // 2. 在動畫轉到側面 (90度) 的瞬間換圖
+        // 0.8s 的一半是 400ms
+        setTimeout(() => {
+            if (apic.src.includes("avatar")) {
+                apic.src = imgThank;
+            } else {
+                apic.src = imgAvatar;
+            }
+        }, 400);
 
-            setTimeout(() => {
-                pic.classList.remove('is-animating');
-            }, 850);
-    });
+        // 3. 動畫結束後移除 class，並恢復可點擊狀態
+        setTimeout(() => {
+            pic.classList.remove('is-animating');
+            isRunning = false;
+        }, 850); 
+    };
 
     // 電腦與手機統一：點擊 wrapper 就觸發
     wrapper.addEventListener('click', (e) => {

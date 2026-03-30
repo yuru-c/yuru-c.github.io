@@ -358,36 +358,39 @@ const imgAvatar = "/img/avatar2.png";
         dismissSplash();
     }
   }, { passive: true });
-  
-document.addEventListener('DOMContentLoaded', () => {
-        const apic = document.getElementById('avatar');
-        const pic = document.querySelector('.profile-pic');
-        const wrapper = document.querySelector('.profile-pic-wrapper');
 
-        if (!apic || !pic || !wrapper) return;
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.profile-pic-wrapper');
+    const apic = document.getElementById('avatar');
+    const pic = document.querySelector('.profile-pic');
+    
+    if (!wrapper || !apic || !pic) return;
+
+    let isRunning = false;
+
+    const performFlip = () => {
+        if (isRunning) return; 
+        isRunning = true;
 
         
-        const p1 = new Image(); p1.src = imgThank;
-        const p2 = new Image(); p2.src = imgAvatar;
+        pic.classList.add('is-animating');
 
-        wrapper.addEventListener('click', () => {
-            if (pic.classList.contains('is-animating')) return;
+        
+        
+        setTimeout(() => {
+            if (apic.src.includes("avatar")) {
+                apic.src = imgThank;
+            } else {
+                apic.src = imgAvatar;
+            }
+        }, 400);
 
-            pic.classList.add('is-animating');
-
-            setTimeout(() => {
-                
-                if (apic.src.toLowerCase().indexOf('thank.png') > -1) {
-                    apic.src = imgAvatar;
-                } else {
-                    apic.src = imgThank;
-                }
-            }, 400);
-
-            setTimeout(() => {
-                pic.classList.remove('is-animating');
-            }, 850);
-    });
+        
+        setTimeout(() => {
+            pic.classList.remove('is-animating');
+            isRunning = false;
+        }, 850); 
+    };
 
     
     wrapper.addEventListener('click', (e) => {

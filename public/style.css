@@ -244,6 +244,8 @@ html {
     display: block;          /* 消除圖片下方縫隙 */
     backface-visibility: hidden;
     transition: transform 0.3s;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .is-animating {
@@ -403,7 +405,7 @@ html {
     white-space: normal;
     max-width: 160px; /* 初始寬度 */
     max-height: 150px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 讓動畫變平滑 */
+    transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1); /* 讓動畫變平滑 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     position: absolute;
     z-index: 100;

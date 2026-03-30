@@ -1101,7 +1101,7 @@ transform: scale(1.02);
     .step-arrow { transform: rotate(90deg); margin: -3px; padding-right: 5px; }
     .excel-frame-container { height: 450px; border-radius: 15px; }
  .step-text {
-    padding: 5px 50px 5px 55px;
+    padding: 5px 20px 5px 25px;
   }
 
 .step-box.active {

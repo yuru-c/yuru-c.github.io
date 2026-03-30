@@ -280,13 +280,8 @@
 </style>
 
 <script>
-
-  
-const preloadThank = new Image();
-preloadThank.src = "/img/thank.png";
-
-const preloadAvatar2 = new Image();
-preloadAvatar2.src = "/img/avatar2.png";
+const imgThank = "/img/thank.png";
+const imgAvatar = "/img/avatar2.png";
 
   
   if ('scrollRestoration' in history) {
@@ -383,10 +378,10 @@ preloadAvatar2.src = "/img/avatar2.png";
         
         
         setTimeout(() => {
-            if (apic.src.match(/avatar/)) {
-                apic.src = "/img/thank.png";
+            if (apic.src.includes("avatar")) {
+                apic.src = imgThank;
             } else {
-                apic.src = "/img/avatar2.png";
+                apic.src = imgAvatar;
             }
         }, 400);
 

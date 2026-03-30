@@ -79,7 +79,7 @@ html {
     max-width: 95%;       /* 手機版不爆出去 */
     margin: 0 auto;       /* 左右自動留白，達成置中 */
     height: 50px;         /* 建議給個固定高度，方便計算 body 的推擠距離 */
-    padding: 0 20px;
+    padding: 0 40px;
     flex-wrap: nowrap !important;
     flex-direction: row !important;
 }
@@ -96,9 +96,11 @@ html {
     flex: 0 0 auto;
     margin-top: 15px;
     padding-left: 10px;
-    width: 100px;
+    width: auto;
     white-space: nowrap;
-    text-align: center;
+    text-align: center;    
+    display: block;
+    margin-left: 3px;
 }
 
 .navigation-menu__inner > li a {
@@ -142,6 +144,7 @@ html {
     padding: 5px 10px;
     animation: 
     blink 0.23s step-end 8 ;
+    white-space: nowrap;
 }
 
 @keyframes blink {
@@ -781,7 +784,8 @@ body {
   .step-text {
     margin-top: 0;
     margin-bottom: 5px;
-    padding: 5px 6px 0 10px;
+    margin-left: -5px;
+    padding: 5px 3px 0 10px;
     font-size: 0.8rem;
     text-align: left;
     line-height: 2.5;
@@ -906,7 +910,7 @@ body {
   border: 1px solid rgba(109, 93, 75, 0.2);
   box-shadow: 3px 0px 2px rgba(81, 51, 25, 0.2);
   border-radius: 16px;
-  padding: 20px 0 10px 0;
+  padding: 20px 10px 10px 10px;
   position: relative;
   transition: all 0.8s ease;
 }
@@ -1097,7 +1101,7 @@ transform: scale(1.02);
     .step-arrow { transform: rotate(90deg); margin: -3px; padding-right: 5px; }
     .excel-frame-container { height: 450px; border-radius: 15px; }
  .step-text {
-    padding: 5px 6px 5px 10px;
+    padding: 5px 50px 5px 55px;
   }
 
 .step-box.active {
@@ -1118,6 +1122,11 @@ transform: scale(1.02);
   .comp-card {
     width: 100%;
   }
+
+  .profile-text h1 {
+    margin-left: 0px !important;
+  }
+
   
 }
 

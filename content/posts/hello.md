@@ -13,7 +13,12 @@ draft: false
 <div class="profile-container">
 <div class="profile-pic-wrapper">
     <div class="profile-pic">
-        <img src="/img/avatar2.png" id="avatar" alt="個人照" >
+        <img id="avatar" 
+     alt="個人照" 
+     src="/img/avatar2.png" 
+     data-t="/img/thank.png" 
+     data-a="/img/avatar2.png" 
+     loading="eager" />
     </div></div>
     <div class="profile-text">
         <h1 style="text-align: center;  line-height:30px; margin-top:30px;margin-bottom:5px; margin-left:-40px">陳郁茹<br> yuru chen</h1>

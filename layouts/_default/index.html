@@ -97,8 +97,6 @@
 </style>
 
 <script>
-const imgThank = {{ "img/thank.png" | relURL }};
-const imgAvatar = {{ "img/avatar2.png" | relURL }};
 
   // --- A. 強制初始化：最優先執行的回頂部邏輯 ---
   if ('scrollRestoration' in history) {
@@ -189,6 +187,11 @@ const imgAvatar = {{ "img/avatar2.png" | relURL }};
         if (isRunning) return; // 動畫執行中，防止連續點擊
         isRunning = true;
 
+        const apic = document.getElementById('avatar');
+    // 使用 getAttribute 避開所有語法檢查
+    const imgThank = apic.getAttribute('data-t');
+    const imgAvatar = apic.getAttribute('data-a');
+
         // 1. 開始動畫 (加上 class)
         pic.classList.add('is-animating');
 
@@ -215,6 +218,11 @@ const imgAvatar = {{ "img/avatar2.png" | relURL }};
         // e.preventDefault(); 
         performFlip();
     });
+
+    [ "/img/thank.png", "/img/avatar2.png" ].forEach(src => {
+    const i = new Image();
+    i.src = src;
+});
 });
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -194,6 +194,8 @@ html {
     pointer-events: auto;        /* 確保可以觸發 hover */
     will-change: transform;
     transform: translateZ(0);
+    transform-style: preserve-3d !important;
+    overflow: visible !important;
     box-shadow: 3px 3px 2px rgba(81, 51, 25, 0.2),
                 -0.1px -0.1px 1px rgba(81, 51, 25, 0.8);
     
@@ -241,15 +243,22 @@ html {
     border-radius: 50%;    
     flex-shrink: 0;
     padding: 0px;
-    display: block;          /* 消除圖片下方縫隙 */
+    display: block !important;          /* 消除圖片下方縫隙 */
     backface-visibility: hidden;
     transition: transform 0.3s;
     opacity: 1 !important;
     visibility: visible !important;
+    border: 2px solid red;
 }
 
 .is-animating {
     animation: scaleThenRotate 0.8s ease-in-out forwards;
+}
+
+/* 確保動畫期間圖片不會消失 */
+.is-animating #avatar {
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
 }
 
 

@@ -360,43 +360,45 @@ const imgAvatar = "/img/avatar2.png";
   }, { passive: true });
 
   document.addEventListener('DOMContentLoaded', () => {
-    const wrapper = document.querySelector('.profile-pic-wrapper');
     const apic = document.getElementById('avatar');
     const pic = document.querySelector('.profile-pic');
+    const wrapper = document.querySelector('.profile-pic-wrapper');
+
     
+    const img1 = "/img/avatar2.png";
+    const img2 = "/img/thank.png";
+
+    
+    [img1, img2].forEach(src => {
+        const t = new Image();
+        t.onload = () => console.log("圖片載入成功:", src);
+        t.onerror = () => alert("圖片載入失敗，請檢查路徑是否存在: " + src);
+        t.src = src;
+    });
+
     if (!wrapper || !apic || !pic) return;
 
-    let isRunning = false;
+    wrapper.addEventListener('click', () => {
+        if (pic.classList.contains('is-animating')) return;
 
-    const performFlip = () => {
-        if (isRunning) return; 
-        isRunning = true;
-
-        
         pic.classList.add('is-animating');
 
-        
-        
         setTimeout(() => {
-            if (apic.src.includes("avatar")) {
-                apic.src = imgThank;
+            
+            if (apic.src.endsWith('avatar2.png')) {
+                apic.src = img2;
             } else {
-                apic.src = imgAvatar;
+                apic.src = img1;
             }
+            
+            
+            apic.style.opacity = "1";
+            apic.style.visibility = "visible";
         }, 400);
 
-        
         setTimeout(() => {
             pic.classList.remove('is-animating');
-            isRunning = false;
-        }, 850); 
-    };
-
-    
-    wrapper.addEventListener('click', (e) => {
-        
-        
-        performFlip();
+        }, 850);
     });
 });
 

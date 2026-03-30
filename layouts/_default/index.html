@@ -97,7 +97,7 @@
 </style>
 
 <script>
-const imgThank = "/img/thank.png"; 
+const imgThank = "/img/cat1.png"; 
 const imgAvatar = "/img/avatar2.png";
 
   // --- A. 強制初始化：最優先執行的回頂部邏輯 ---
@@ -177,45 +177,43 @@ const imgAvatar = "/img/avatar2.png";
   }, { passive: true });
 
   document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.profile-pic-wrapper');
     const apic = document.getElementById('avatar');
     const pic = document.querySelector('.profile-pic');
-    const wrapper = document.querySelector('.profile-pic-wrapper');
-
-    // 1. 強制定義絕對路徑 (請確認你的圖片確實在 static/img/ 下)
-    const img1 = "/img/avatar2.png";
-    const img2 = "/img/thank.png";
-
-    // 2. 診斷：測試圖片是否能讀取
-    [img1, img2].forEach(src => {
-        const t = new Image();
-        t.onload = () => console.log("圖片載入成功:", src);
-        t.onerror = () => alert("圖片載入失敗，請檢查路徑是否存在: " + src);
-        t.src = src;
-    });
-
+    
     if (!wrapper || !apic || !pic) return;
 
-    wrapper.addEventListener('click', () => {
-        if (pic.classList.contains('is-animating')) return;
+    let isRunning = false;
 
+    const performFlip = () => {
+        if (isRunning) return; // 動畫執行中，防止連續點擊
+        isRunning = true;
+
+        // 1. 開始動畫 (加上 class)
         pic.classList.add('is-animating');
 
+        // 2. 在動畫轉到側面 (90度) 的瞬間換圖
+        // 0.8s 的一半是 400ms
         setTimeout(() => {
-            // 切換邏輯：根據目前的 src 結尾判斷
-            if (apic.src.endsWith('avatar2.png')) {
-                apic.src = img2;
+            if (apic.src.includes("avatar")) {
+                apic.src = imgThank;
             } else {
-                apic.src = img1;
+                apic.src = imgAvatar;
             }
-            
-            // 強制讓瀏覽器知道圖片要顯示
-            apic.style.opacity = "1";
-            apic.style.visibility = "visible";
         }, 400);
 
+        // 3. 動畫結束後移除 class，並恢復可點擊狀態
         setTimeout(() => {
             pic.classList.remove('is-animating');
-        }, 850);
+            isRunning = false;
+        }, 850); 
+    };
+
+    // 電腦與手機統一：點擊 wrapper 就觸發
+    wrapper.addEventListener('click', (e) => {
+        // 如果你的圖片在 <a> 標籤內，可以視需求決定是否阻止預設行為
+        // e.preventDefault(); 
+        performFlip();
     });
 });
 

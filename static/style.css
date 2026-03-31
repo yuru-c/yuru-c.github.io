@@ -1026,10 +1026,11 @@ transform: scale(1.02);
         display: flex; /* 改為 flex 讓內容可以折行 */
         max-width: none; /* 取消寬度限制 */
         align-items: center;
+        justify-content: flex-start; /* 靠左對齊 */
         width: 100%; /* 讓兩個標籤並排，或改 100% 單行 */
         height: auto;
         max-height: 500px;
-        padding: 15px 19px 0px 20px;
+        padding: 12px 15px;
         background: rgba(255, 255, 255, 0.9);
         margin-bottom: 10px;
         position: relative; 
@@ -1063,7 +1064,6 @@ transform: scale(1.02);
     display: block;
     border-left: none !important;
     line-height: 1.2;
-    padding-bottom: 20px;
 }
 
 .skill-item:hover .skill-desc {
@@ -1073,12 +1073,12 @@ transform: scale(1.02);
 
 
 
-    .skill-info {
-        display: flex;
-        flex-direction: column;   /* 讓 Name 在上，Desc 在下 */
-        margin-left: 12px;        /* 文字與圖示的固定間距 */
-}
-    
+.skill-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px; /* Icon 與 Name 之間的固定間距 */
+    text-align: left;
+}  
     .skill-icon {
         display: flex;
     align-items: center;
@@ -1150,7 +1150,7 @@ transform: scale(1.02);
     .step-arrow { transform: rotate(90deg); margin: -3px;}
     .excel-frame-container { height: 450px; border-radius: 15px; }
  .step-text {
-    padding: 5px 5% 5px 5%;
+    padding: 5px 5px 5px 8px;
   }
 
 .step-box.active {

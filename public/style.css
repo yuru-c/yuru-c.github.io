@@ -1080,10 +1080,13 @@ transform: scale(1.02);
 }
     
     .skill-icon {
-        align-items: center;
-        margin-top: -5%;
-        font-size: 25px !important;
-        width: 30px;    
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;    /* 固定寬度，確保後面的文字起始點一致 */
+    font-size: 25px !important;
+    margin-top: 0;  /* 移除 -5%，靠父層 align-items: center 對齊 */
+    flex-shrink: 0; /* 防止圖示被擠壓變形 */  
     }
 
     .sill-text {
@@ -1144,7 +1147,7 @@ transform: scale(1.02);
 
   .step-nav { flex-direction: column; gap: 5px; margin-bottom: 10px; align-items: center;}
     .step-box { width: 100%; border-radius: 10px; padding: 10px; }
-    .step-arrow { transform: rotate(90deg); margin: -3px; padding-right: 5px; }
+    .step-arrow { transform: rotate(90deg); margin: -3px;}
     .excel-frame-container { height: 450px; border-radius: 15px; }
  .step-text {
     padding: 5px 5% 5px 5%;

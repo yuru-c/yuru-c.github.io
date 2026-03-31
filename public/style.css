@@ -1146,11 +1146,12 @@ transform: scale(1.02);
 }
 
   .step-nav { flex-direction: column; gap: 5px; margin-bottom: 10px; align-items: center;}
-    .step-box { width: 100%; border-radius: 10px; padding: 10px; }
+    .step-box {transform: scale(1) !important; width: 100%; border-radius: 10px; padding: 10px; }
     .step-arrow { transform: rotate(90deg); margin: -3px;}
     .excel-frame-container { height: 450px; border-radius: 15px; }
  .step-text {
-    padding: 5px 5px 5px 8px;
+    padding: 10px 15px; /* 固定內距 */
+    line-height: 1.8;   /* 電腦版 2.5 太高了，手機版建議縮小 */
   }
 
 .step-box.active {

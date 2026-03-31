@@ -342,6 +342,7 @@ html {
 
 .mail {
     text-decoration: none;
+    font-size: 16px;
 }
 
 .mail:hover{
@@ -375,87 +376,7 @@ html {
     pointer-events: none; 
 }
 
-.skill-item {
-    display: inline-block; 
-    vertical-align: top;
-    width: 170px;  /* 固定的佔位寬度 */
-    height: 45px; /* 固定的高度 */
-    margin: 7px;   /* 標籤間距 */
-    position: relative; /* 給內層 tag 定位用 */
-}
 
-.skill-item:hover {
-    z-index: 999; 
-}
-
-.skill-tag {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    margin: 8px;
-    background: #ffffff;
-    border: 1px solid #a68d71;
-    border-radius: 10px;
-    font-size: 14px;
-    color: #6d5d4b;
-    cursor: default;
-    overflow: hidden;
-    white-space: normal;
-    max-width: 160px; /* 初始寬度 */
-    max-height: 150px;
-    transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1); /* 讓動畫變平滑 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: absolute;
-    z-index: 100;
-}
-
-.skill-tag:hover {
-    width: 250px;
-    min-width: 50px;
-    max-width: 500px;
-    height: auto;       /* 允許高度隨換行文字增長 */
-    min-height: 45px;
-    background: rgb(109, 93, 75);
-    color: #fff;
-    border-color: #333;
-    transform: translate(-3px, -3px);
-    box-shadow: 4px 4px 0px #a68d71;
-}
-
-.skill-tag:hover a{
-    color: #fff;
-}
-
-.skill-tag:hover .skill-desc {
-        opacity: 0.9;
-        display: block;
-        width: auto;
-        margin-left: 0px;
-        padding-left: 12px;
-        border-left: 1px solid rgba(255,255,255,0.3);
-        color: #f1ede7; /* 描述文字在深色背景下改為淺色 */
-        white-space: normal; 
-        word-break: break-all;
-}
-
-/* 說明文字初始隱藏 */
-.skill-desc {
-    font-size: 12px;
-    display: none;
-    opacity: 0;
-    margin-left: 0;
-    width: 0;
-    transition: all 0.3s ease;
-    color: #a68d71;
-    white-space: normal; 
-}
-
-
-.skill-tag i {
-    margin-right: 8px;
-    font-size: 16px;
-    min-width: 18px;
-}
 
 .custom-section {
     margin-top: 20px;
@@ -493,6 +414,113 @@ html {
     padding-top: 60px !important; 
     margin-top: -50px !important;
   }
+
+  .skill-class {
+     font-size:20px;
+  }
+
+  .skill-item {
+    display: inline-block; 
+    vertical-align: top;
+    width: 170px;  /* 固定的佔位寬度 */
+    height: 45px; /* 固定的高度 */
+    margin: 7px;   /* 標籤間距 *//* 給內層 tag 定位用 */
+}
+
+.skill-item:hover {
+    z-index: 999; 
+}
+
+.skill-item:hover .skill-tag {
+    width: 250px;
+    min-width: 300px;
+    max-height: 500px; /* 給一個足夠大的值讓它長出來 */
+    background: rgb(109, 93, 75);
+    color: #fff;
+    z-index: 999;
+    pointer-events: auto; /* 展開後恢復滑鼠事件以便點擊內容 */
+    box-shadow: 4px 4px 0px #a68d71;
+    align-items: flex-start;
+}
+
+.skill-name {
+    /* 確保名字有固定的行高，不會被擠壓 */
+    line-height: 1.2;
+    display: block;
+    line-height: 21px;
+    font-size: 16px;
+}
+
+.skill-tag {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 20px;
+    margin: 8px;
+    background: #ffffff;
+    border: 1px solid #a68d71;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #6d5d4b;
+    cursor: default;
+    overflow: hidden;
+    white-space: normal;
+    max-width: 170px; /* 初始寬度 */
+    max-height: 45px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 讓動畫變平滑 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+    transition: 
+        width 5s ease, 
+        height 0.2s ease, 
+}
+
+
+
+.skill-tag:hover a{
+    color: #fff;
+}
+
+.skill-icon {
+    padding-top: 2px;
+    padding-right: 5px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+
+/* 說明文字初始隱藏 */
+.skill-desc {
+    /* 取消 display: none，改用以下組合 */
+    display: block !important; 
+    visibility: hidden;   /* 隱藏但佔位(或不佔位) */
+    opacity: 0;
+    max-height: 0;        /* 初始高度 0 */
+    margin-top: 0;
+    overflow: hidden;
+    
+    /* 這裡設定 transition，並給予 0.1s 的延遲，讓外框先動 */
+    transition: 
+        max-height 0.4s ease, 
+        opacity 0.3s ease 0.1s, 
+        margin-top 0.3s ease;
+}
+
+.skill-tag i {
+    margin-right: 8px;
+    font-size: 18px;
+    min-width: 18px;
+}
+
+.skill-item:hover .skill-desc {
+    visibility: visible;
+    opacity: 1;
+    max-height: 45px;    /* 設定一個夠大的數值 */
+    padding-left: 12px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+}
 
   .exp-card {
     background: linear-gradient(
@@ -665,6 +693,7 @@ html {
     overflow: hidden;
     white-space: nowrap;
     margin-bottom: -20px;
+    font-size: 25px;
 }    
 
 .section-container {
@@ -772,17 +801,19 @@ body {
   }
 
   .step-num {
-    font-size: 0.85rem;
+    font-size: 16px;
     color: #9a7979;
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 0px;
+    padding-top: 5px;
   }
 
   .step-info {
-    font-size: 0.95rem;
+    font-size: 16px;
     color: #444;
     font-weight: 600;
+    font-weight: bold;
   }
 
   .step-text {
@@ -790,9 +821,10 @@ body {
     margin-bottom: 5px;
     margin-left: -5px;
     padding: 5px 3px 0 10px;
-    font-size: 0.8rem;
+    font-size: 15px;
     text-align: left;
     line-height: 2.5;
+    color: #444 ;
   }
 
   
@@ -926,7 +958,7 @@ transform: scale(1.02);
   
 .comp-tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: bold;
   letter-spacing: 1px;
   padding: 3px 10px;
@@ -944,7 +976,7 @@ transform: scale(1.02);
 
 .comp-content p {
   margin: 8px 0;
-  font-size: 0.85rem;
+  font-size: 15px;
   color: #555;
   text-align: left;
 }
@@ -996,16 +1028,21 @@ transform: scale(1.02);
         align-items: center;
         width: 100%; /* 讓兩個標籤並排，或改 100% 單行 */
         height: auto;
-        max-height: 100px;
-        padding: 15px 19px 15px 20px;
+        max-height: 500px;
+        padding: 15px 19px 0px 20px;
         background: rgba(255, 255, 255, 0.9);
         margin-bottom: 10px;
         position: relative; 
+        margin: 8px;
+        background: #ffffff;
+        border: 1px solid #a68d71;
+        border-radius: 10px;
     }
 
-    .skill-tag:hover {
-        width: 100%;
-    }
+    .skill-item:hover .skill-tag {
+        background: #6d5d4b;
+        color: #fff;
+}
 
     .skill-item {
     display: block;
@@ -1019,15 +1056,21 @@ transform: scale(1.02);
     white-space: normal;
     font-size: 15px;
     opacity: 1;
-    margin-top: 3px;
-    margin-left: 0;
-    width: 100%;
+    margin: 3px 0;
+    margin-bottom: 0px;
     transition: all 0.3s ease;
     color: #666;
     display: block;
     border-left: none !important;
     line-height: 1.2;
+    padding-bottom: 20px;
 }
+
+.skill-item:hover .skill-desc {
+    padding-left: 5px;
+    color: #fff;
+}
+
 
 
     .skill-info {
@@ -1037,12 +1080,10 @@ transform: scale(1.02);
 }
     
     .skill-icon {
+        align-items: center;
+        margin-top: -5%;
         font-size: 25px !important;
-        width: 30px;
-        flex-shrink: 0;
-        display: flex;
-        justify-content: center;
-        margin: 0 !important;
+        width: 30px;    
     }
 
     .sill-text {
@@ -1050,7 +1091,7 @@ transform: scale(1.02);
     }
 
     .skill-name {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
         margin: 0;              /* 移除原本的 margin-top/left */
         line-height: 1.2
@@ -1060,6 +1101,7 @@ transform: scale(1.02);
     .skill-tag i {
         margin-bottom: 5px;
     }
+    
 
     .exp-card {
     background: linear-gradient(
@@ -1129,6 +1171,14 @@ transform: scale(1.02);
 
   .profile-text h1 {
     margin-left: 0px !important;
+  }
+
+  .skill-class {
+     font-size:18px;
+  }
+
+  .title {
+    font-size: 23px;
   }
 
   

@@ -50,7 +50,7 @@ draft: false
                     <i class="fab fa-python skill-icon"></i> 
                     <div class="skill-info">
                         <span class="skill-name">Python</span>
-                        <span class="skill-desc">曾修習資料結構課程<br>掌握基礎語法</span>
+                        <span class="skill-desc">曾修習資料結構課程<br>基礎語法</span>
                     </div>
                 </div>
             </div>

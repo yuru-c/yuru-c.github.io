@@ -134,9 +134,9 @@ draft: false
         <div class="exp-dot" ></div>
         <div class="exp-content">
         <strong style="font-size:20px;">2022-2023</strong>
-        <h4 style="margin: 5px 0; font-size:18px;">大眾運輸公司 會館 <br>
-        - 科技公司（2022起承攬）- <br>
-        工讀生→督導</h4>
+        <h4 style="margin: 5px 0; font-size:18px;">大眾運輸公司 會館 </h4>
+        <h4 style="margin:0; font-size:16px; line-height:1;">- 科技公司（2022起承攬）- </h4>
+        <h4 style="margin: 5px 0; font-size:18px;">工讀生→督導</h4>
         <div class="exp-text">
         <p style="font-size: 16px;"><strong>職位晉升：</strong><br>
         憑藉對業務的熟悉度與問題處理經驗，獲原單位留任並晉升督導。</p>

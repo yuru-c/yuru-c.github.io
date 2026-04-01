@@ -22,7 +22,7 @@ draft: false
             <li><span class="fa-li"><i class="fa-solid fa-envelope"></i></span><a href="mailto:shannon0137@gmail.com" class="mail">shannon0137@gmail.com</a></li>
             <li><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span style="font-size:16px;">天主教輔仁大學數學系應用數學組</li>
                     </ul>
-        <p style="font-size:14px; margin-left:-30px">※歡迎來到我的個人網頁！本網頁旨在提供更具深度與動態感的成果展示；基於資安考量，網頁內容已隱去具體之個人敏感資訊。<br>關於更詳細的<strong>個人資料與成績證明</strong>，已整理於郵件附件中。若有任何疑問或建議，歡迎隨時與我聯繫，謝謝您。</p>
+        <p style="font-size:14px; margin-left:-30px">※ 歡迎來到我的個人網頁！本網頁旨在提供更具深度與動態感的成果展示；基於資安考量，網頁內容已隱去具體之個人敏感資訊。<br>關於更詳細的<strong>個人資料與成績證明</strong>，已整理於郵件附件中。若有任何疑問或建議，歡迎隨時與我聯繫，謝謝您。</p>
         </div>
     </div>
 </div>
@@ -73,14 +73,23 @@ draft: false
                 <div class="skill-tag">
                     <i class="fab fa-html5 skill-icon"></i> 
                     <div class="skill-info">
-                        <span class="skill-name">HTML / CSS</span>
+                        <span class="skill-name">HTML</span>
+                        <span class="skill-desc">自學 個人網頁實作 處理樣式與佈局</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-tag">
+                    <i class="fa-brands fa-css3-alt"></i> 
+                    <div class="skill-info">
+                        <span class="skill-name">CSS</span>
                         <span class="skill-desc">自學 個人網頁實作 處理樣式與佈局</span>
                     </div>
                 </div>
             </div>
         </li>
 <li>
-            <strong class="skill-class"><i class="fa-solid fa-briefcase "></i> 辦公軟體 [一般]：</strong><br>
+           <strong class="skill-class"><i class="fa-solid fa-briefcase "></i> 辦公軟體 [一般]：</strong><br>
             
  <div class="skill-item">
                 <div class="skill-tag" style="cursor: pointer;" onclick="location.href='#display'">
@@ -210,13 +219,13 @@ draft: false
 </div>
 
 <section class="excel-container">
-<p style="margin-top:30px; margin-bottom:15px; font-size:14px">※本表單僅供功能演示，已移除部分資訊及功能。<br>※如顯示錯誤，請更新頁面，建議使用電腦<br>※申請表補充：1.此表設定每筆適用年限為5年，每2點為一基數，其作為核發金額基準。<br>2.點擊「點此移至空白欄位填寫」可跳至空白欄位做填寫。</p>
+<p style="margin-top:30px; margin-bottom:0px; padding-bottom:0px; font-size:14px; padding-left: 1.5em; text-indent: -1.2em; ">※ 本表單僅供功能演示，已移除部分資訊及功能。</p><p style="font-size:14px; margin:0; padding-left: 1.5em; text-indent: -1.2em; ">※ 如顯示錯誤，請更新頁面，建議使用電腦</p><p style="font-size:14px; margin:0; padding-left: 1.5em; text-indent: -1.2em; ">※ 申請表補充：</p><p style="font-size:14px; margin:0; padding-left: 2.8em; text-indent: -1.2em; ">1. 此表設定每筆適用年限為5年，每2點為一基數，其作為核發金額基準。</p><p style="font-size:14px; margin:0; padding-left: 2.8em; text-indent: -1.2em; margin-bottom:30px;">2. 點擊「點此移至空白欄位填寫」可跳至空白欄位做填寫。</p>
 <div class="excel-guide-container">
   <div class="step-nav">
     <div class="step-box" id="step1">
       <div class="step-num">01</div>
-      <div class="step-info">初始化 - 年限基準設定
-      </div><p class="step-text">● 操作：頂端輸入「當年度」。<br>○ 功能：作為「點數效期」之判定基準。</p>
+      <div class="step-info">初始化<br>年限基準設定
+      </div><p class="step-text"><strong>● 操作：</strong>頂端輸入「當年度」。</p><p class="step-text"><strong>○ 功能：</strong>作為「點數效期」之判定基準。</p>
       <div class="scan-line"></div>
     </div>
     
@@ -226,7 +235,7 @@ draft: false
 
 <div class="step-box" id="step2">
       <div class="step-num">02</div>
-      <div class="step-info">申請人填寫 - 資料紀錄與引導</div><p class="step-text">● 操作：於底色標示處新增資料。<br>○ 項目連動：依項目自動帶入對應點數與備註，輔助申請人填寫。<br>○ 歷程存查：規範數據格式，確保年度資料具備可比對性。</p>
+      <div class="step-info">申請人填寫<br>資料紀錄與引導</div><p class="step-text"><strong>● 操作：</strong>於底色標示處新增資料。</p><p class="step-text"><strong>○ 項目連動：</strong>依項目自動帶入對應點數與備註，輔助申請人填寫。</p><p class="step-text"><strong>○ 歷程存查：</strong>規範數據格式，確保年度資料具備可比對性。</p>
       <div class="scan-line"></div>
     </div>
 
@@ -236,8 +245,8 @@ draft: false
 
 <div class="step-box" id="step3">
       <div class="step-num">03</div>
-      <div class="step-info">審查填寫 - 效期判定與核定</div><p class="step-text">● 操作：審查人員核對並填寫底色標示處。<br>○ 時效過濾：逾期項目自動標示失效不予計點。
-<br>○ 數據彙整：自動加總有效點數並轉換為基數。
+      <div class="step-info">審查填寫<br>效期判定與核定</div><p class="step-text"><strong>● 操作：</strong>審查人員核對並填寫底色標示處。</p><p class="step-text"><strong>○ 時效過濾：</strong>逾期項目自動標示失效不予計點。
+</p><p class="step-text"><strong>○ 數據彙整：</strong>自動加總有效點數並轉換為基數。
 </p>
       <div class="scan-line"></div>
     </div>

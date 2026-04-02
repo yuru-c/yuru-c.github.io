@@ -252,6 +252,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  document.addEventListener('focusin', function() {
+  console.log('目前的焦點在：', document.activeElement);
+}, true);
+
 
 
 </script>

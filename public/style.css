@@ -822,14 +822,20 @@ body {
   .step-text {
     margin-top: 0;
     margin-bottom: 4px;
-    margin-left: -5px;
-    padding: 0 ;
+    /* 1. 移除 margin-left 的負值，這在手機上很危險 */
+    margin-left: 0; 
+    padding: 0;
     font-size: 15px;
     text-align: left;
     line-height: 1.8;
-    color: #444 ;
-    padding-left: 1.5rem;
-    text-indent: -1.3rem; 
+    color: #444;
+    
+    /* 2. 改用這對組合，這是行動裝置最穩定的懸掛縮排做法 */
+    padding-left: 1.3rem;  /* 給左邊足夠的空間 */
+    text-indent: -1.3rem;  /* 讓第一行凸回去 */
+    
+    /* 3. 確保它是塊狀元素，避免渲染異常 */
+    display: block;
     box-sizing: border-box;
   }
 

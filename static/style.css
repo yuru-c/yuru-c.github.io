@@ -51,6 +51,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; /* 禁止 iOS 自動縮放文字 */
+    text-size-adjust: 100%;
 }
 
 .header {
@@ -313,7 +315,7 @@ html {
     text-align: center;
     margin-left: 50px;
     line-height: 30px;
-    letter-spacing: .1em;    
+    letter-spacing: 0.1em;    
     padding: 10px;
     font-weight: 500;
 }
@@ -826,8 +828,8 @@ body {
     text-align: left;
     line-height: 1.8;
     color: #444 ;
-    padding-left: 1.5em;
-    text-indent: -1.3em; 
+    padding-left: 1.5rem;
+    text-indent: -1.3rem; 
     box-sizing: border-box;
   }
 

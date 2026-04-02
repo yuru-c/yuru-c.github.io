@@ -828,7 +828,7 @@ body {
     color: #444 ;
     padding-left: 1.5em;
     text-indent: -1.3em; 
-  
+    box-sizing: border-box;
   }
 
   

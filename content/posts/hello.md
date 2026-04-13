@@ -155,7 +155,7 @@ draft: false
         <p style="font-size: 16px;"><strong>核心成就：</strong><br>為優化訓練流程，編撰 SOP 作業手冊與教材，實現行政流程標準化。</p></div></div>
     </div>
 
-<div class="exp-card" id="excel" >
+<div class="exp-card">
         <div class="exp-dot"></div>
         <div class="exp-content">
         <strong style="font-size:20px;">2023-2025</strong>
@@ -188,9 +188,15 @@ draft: false
 </div></div>
 
 <div class="section-container" style="margin-top: 0px;">
-<h1 id="display"  class="title" style="margin-top:10px; "><i class="fa-solid fa-table"> 實作展示 - 整合式申請表</h1></i>
+<h1 id="display"  class="title" style="margin-top:10px; "><i class="fa-solid fa-table"> 實作展示</h1></i>
 
-
+<div class="display-container" style="margin-bottom:10px">
+<div class="accordion">
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+    <span class="glass-filename" style="font-size:20px; font-weight: bold; text-align: center; margin-left: 48px;">A. EXCEL 整合式申請表</span>
+    <span class="arrow-icon">▼</span>
+  </div>
+<div class="accordion-content">
 <div class="comparison-container" >
   <div class="comparison-header">
     <div class="comp-card legacy">
@@ -265,5 +271,148 @@ draft: false
         frameborder="0" 
         scrolling="no"></iframe>
   </div></div>
+</div></div></div>
+<div class="accordion">
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+    <span class="glass-filename" style="font-size:20px; font-weight: bold; text-align: center; margin-left: 48px;">B. App 介面佈局實作練習</span>
+    <span class="arrow-icon">▼</span>
+  </div>
+<div class="accordion-content">
+  
+   <div class="carousel-container">
+   <strong style="margin-top:10px; margin-bottom:0px;">專題背景：</strong><p style="font-size:16px; margin-top:0px; padding:0 15px;">
+本專題源於大學時期打工的實際觀察。當時發現職場在薪資計算、出勤打卡與資訊傳遞（公告）上存在效率低落與溝通斷層的問題，因此以整合雇主與員工需求的行動應用程式作為專題主題。</p>
+      <p style="font-size:16px; margin:0px; padding:0 15px; font-weight:bold;">※ 因為主要負責 UI 佈局及功能設計，加上專案開發時間較久遠，故僅展示部分開發紀錄與部分介面原始碼。</p>
+      <div class="carousel">
+              <p class="label">PPT展示</p>
+<div class="slide fade">
+          <div class="main-display-container">
+            <div class="ppt-frame">
+              <img src="/img/app_1.png" alt="PPT1" class="main-img" onclick="openModal(this.src)">
+              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_1.png')">
+                <div class="thumb-container">
+                  <img src="/img/phone_1.png" class="tag-thumb">
+                </div>
+                <span class="text">查看原稿</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="slide fade">
+          <div class="main-display-container">
+            <div class="ppt-frame">
+              <img src="/img/app_2.png" alt="PPT2" class="main-img" onclick="openModal(this.src)">
+              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_2.png')">
+                <div class="thumb-container">
+                  <img src="/img/phone_2.png" class="tag-thumb">
+                </div>
+                <span class="text">查看原稿</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="slide fade">
+          <div class="main-display-container">
+            <div class="ppt-frame">
+              <img src="/img/app_3.png" alt="PPT3" class="main-img" onclick="openModal(this.src)">
+            </div>
+          </div>
+        </div>
+
+<div class="slide fade">
+          <div class="main-display-container">
+            <div class="ppt-frame">
+              <img src="/img/app_4.png" alt="PPT4" class="main-img" onclick="openModal(this.src)">
+              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_4.png')">
+                <div class="thumb-container">
+                  <img src="/img/phone_4.png" class="tag-thumb">
+                </div>
+                <span class="text">查看原稿</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="slide fade">
+          <div class="main-display-container">
+            <div class="ppt-frame">
+              <img src="/img/app_5.png" alt="PPT5" class="main-img" onclick="openModal(this.src)">
+              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_5.png')">
+                <div class="thumb-container">
+                  <img src="/img/phone_5.png" class="tag-thumb">
+                </div>
+                <span class="text">查看原稿</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+      </div> 
+      <div style="text-align:center; margin-top: 10px;">
+        <span class="dot" onclick="currentSlide(0)"></span> 
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+      </div>
+    </div>
+<div class="accordion"> <div class="accordion-header" onclick="event.stopPropagation(); toggleAccordion(this)">
+    <div class="glass-dots">
+      <span class="g-dot"></span>
+      <span class="g-dot"></span>
+      <span class="g-dot"></span>
+    </div>
+    <span class="glass-filename">View XML Layout</span>
+    <span class="arrow-icon">▼</span>
+  </div>
+  <div class="accordion-content" style="background: #826f5a;">
+    <div class="glass-body">
+    <pre><code style="color:#FFF;">
+&lt;RelativeLayout
+    android:id="@+id/button_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:padding="10dp"&gt;
+
+&lt;Button
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_add_time"
+        android:text="發布公告"
+        android:textColor="#ffffffff"
+        android:textSize="18sp" /&gt;
+
+&lt;/RelativeLayout&gt;
+
+&lt;ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/button_layout"
+    android:padding="5dp"&gt;
+
+&lt;LinearLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"&gt;
+
+&lt;/LinearLayout&gt;
+
+&lt;/ScrollView&gt;
+    </code></pre>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="myModal" class="modal" onclick="closeModal()">
+  <img class="modal-content" id="img01">
 </div>
 

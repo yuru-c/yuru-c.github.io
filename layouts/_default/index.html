@@ -220,43 +220,136 @@ const imgAvatar = "/img/avatar2.png";
 document.addEventListener('DOMContentLoaded', () => {
     const steps = document.querySelectorAll('.step-box');
     const overlay = document.getElementById('excelOverlay');
+    
+    // 防錯機制：如果畫面上沒有這些元素，就不執行
+    if (!steps.length || !overlay) return;
+
     let currentStep = 0;
     
+    // 清除可能殘留的計時器（如果這段 code 會被重複執行的話）
+    if (window.myStepInterval) clearInterval(window.myStepInterval);
+
     // --- 1. 輪流閃爍邏輯 ---
     const stepInterval = setInterval(() => {
-      // 移除所有人的 active
-      steps.forEach(s => s.classList.remove('active'));
-      // 亮起當前這一個
-      steps[currentStep].classList.add('active');
-      // 下一個
-      currentStep = (currentStep + 1) % steps.length;
+        // 再次確認 steps 是否還存在於 DOM 中
+        if (steps[currentStep]) {
+            steps.forEach(s => s.classList.remove('active'));
+            steps[currentStep].classList.add('active');
+            currentStep = (currentStep + 1) % steps.length;
+        }
     }, 5000);
 
+    // 將計時器 ID 存入 window，方便追蹤
+    window.myStepInterval = stepInterval;
+
     // --- 2. 點擊解鎖邏輯 ---
-    overlay.addEventListener('click', () => {
-      // 停止輪流閃爍
-      clearInterval(stepInterval);
-      
-      // 移除遮罩
-      overlay.style.opacity = '0';
-      overlay.style.pointerEvents = 'none';
-      
-      // 讓所有步驟呈現「已解鎖」的微亮狀態
-      steps.forEach(s => {
-        s.classList.add('active');
-        s.style.transform = 'scale(1)';
-        s.style.opacity = '0.8';
-      });
-      
-      console.log("Excel 展示模式已啟動");
-    });
-  });
+    // 使用命名函式，方便後續維護或手動移除
+    const unlockExcel = () => {
+        clearInterval(stepInterval);
+        
+        overlay.style.transition = 'opacity 0.5s ease'; // 加上漸變比較順
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        
+        steps.forEach(s => {
+            s.classList.add('active');
+            s.style.transform = 'scale(1)';
+            s.style.opacity = '0.8';
+        });
+        
+        console.log("Excel 展示模式已啟動");
+        // 解鎖後移除監聽器，避免重複點擊觸發
+        overlay.removeEventListener('click', unlockExcel);
+    };
 
-  document.addEventListener('focusin', function() {
-  console.log('目前的焦點在：', document.activeElement);
-}, true);
+    overlay.addEventListener('click', unlockExcel);
+});
 
 
+let currentIndex = 0;
+
+// 當頁面載入完成後執行第一次顯示
+window.onload = function() {
+    showSlides(currentIndex);
+};
+
+// 處理左右按鈕的點擊
+function moveSlide(n) {
+    showSlides(currentIndex += n);
+}
+
+// 處理下方點點的點擊
+function currentSlide(n) {
+    showSlides(currentIndex = n);
+}
+
+// 核心顯示邏輯
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+
+    if (slides.length === 0) return; // 防錯機制
+
+    // 循環邏輯：超過最後一張回第一張，小於第一張跳最後一張
+    if (n >= slides.length) { currentIndex = 0; }
+    if (n < 0) { currentIndex = slides.length - 1; }
+
+    // 1. 隱藏所有圖片
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // 2. 移除所有點點的 active 樣式
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // 3. 顯示當前圖片，並啟動對應點點
+    slides[currentIndex].style.display = "block";
+    if (dots.length > 0) {
+        dots[currentIndex].className += " active";
+    }
+}
+
+function openModal(src) {
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+
+    if (modal && modalImg) {
+        modal.style.display = "flex"; // 開啟彈窗
+        modalImg.src = src;           // 載入圖片路徑
+        document.body.style.overflow = "hidden"; // 禁止背景捲動
+    } else {
+        console.error("找不到 Modal 元素");
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById("myModal");
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // 恢復背景捲動
+    }
+}
+
+// 點擊圖片以外的地方也要能關閉
+window.onclick = function(event) {
+    const modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        closeModal();
+    }
+};
+
+function toggleAccordion(element) {
+    // 找到點擊標題最近的那個 .accordion 容器
+    const accordion = element.closest('.accordion');
+    
+    if (accordion) {
+        // 切換 active 類別
+        accordion.classList.toggle('active');
+    }
+}
 
 </script>
 

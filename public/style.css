@@ -278,6 +278,7 @@ html {
     padding:0 5%;
 }
 
+/*主區塊*/
 .profile-container,
 .skills-container,
 .custom-section,
@@ -406,10 +407,357 @@ html {
 .post ul li {
     position: relative;
     padding-left: 0 !important;
-    margin-bottom: 8px;
+    margin-bottom: 40px;
 }
 
-@media (min-width: 685px) {
+.display-container {
+    padding: 0 2px;
+    
+}
+
+* { box-sizing: border-box; }
+
+.carousel {
+  /* max-width: 600px; */
+  position: relative;
+  margin: auto;
+  overflow: hidden; /* 防止圖片溢出 */
+  padding: 0 34px;
+  border-radius: 10px;
+}
+
+.label {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(132, 102, 64, 0.2);
+}
+
+.slide {
+  display: none;
+}
+
+
+/* 左右按鈕樣式 */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0px 10px;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 30px;
+  width: auto;
+  height: auto;
+  user-select: none;
+  transition: 0.3s ease;
+  text-shadow: 3px 3px 2px rgba(81, 51, 25, 0.2);x;
+}
+
+.next { right: 0; border-radius: 3px; }
+.prev { left: 0; border-radius: 3px;}
+
+.next:hover, .prev:hover {
+  transform: scale(1.1) translateY(-46%);
+}
+
+/* 淡入動畫 */
+.fade {
+  animation: fadeAnim 0.5s;
+}
+
+@keyframes fadeAnim {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171; /* 作用中或游標移上去的顏色 */
+}
+
+/* 彈窗背景：確保它是滿版黑 */
+.modal {
+  display: none;
+  position: fixed;    /* 絕對關鍵：固定在視窗，不隨內容排版 */
+  z-index: 99999;     /* 層級設到最高 */
+  left: 0;
+  top: 0;
+  width: 100vw;       /* 視窗全寬 */
+  height: 100vh;      /* 視窗全高 */
+  background-color: rgba(0, 0, 0, 0.9); /* 背景變黑 */
+}
+
+/* 放大後的圖片 */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;     /* 限制最大寬度，避免跑出螢幕 */
+  max-height: 85vh;   /* 限制最大高度 */
+  
+  cursor: pointer;
+  
+  /* 讓圖片在視窗正中間 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  
+  /* 動畫效果（選配） */
+  animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+  from {transform: translate(-50%, -50%) scale(0.5); opacity: 0;}
+  to {transform: translate(-50%, -50%) scale(1); opacity: 1;}
+}
+
+/* 外層容器 */
+.main-display-container {
+  display: flex; /* 讓 PPT 和手機縮圖並排 */
+  align-items: flex-end; /* 底部對齊 */
+  justify-content: center;
+  gap: 15px; /* 留一點空隙 */
+}
+
+.ppt-frame {
+  position: relative;
+  display: block;
+  width: 100%; /* 確保寬度跟隨 slide */
+}
+
+/* 主圖 PPT */
+.main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  margin: 0;
+}
+
+/* 標籤本體 */
+.draft-tag {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.4); 
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* 圓形核心設定 */
+  width: 42px;           /* 寬度與高度相等 */
+  height: 42px;
+  border-radius: 50%;    /* 讓它變成正圓形 */
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 讓內容從左開始排，展開時才自然 */
+  padding: 4px;          /* 內距讓照片縮小一點點待在圓圈內 */
+  
+  cursor: pointer;
+  overflow: hidden;      /* 隱藏文字 */
+  white-space: nowrap;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* 滑鼠移上去的效果 */
+.draft-tag:hover {
+    width: 100px;
+    border-radius: 50px;    /* 變回膠囊形狀 */
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);         /* 輕微浮起 */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.draft-tag .icon {
+  font-size: 16px;
+}
+
+.draft-tag .text {
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap; /* 防止文字換行 */
+  opacity: 0;              /* 初始隱藏 */
+  transition: opacity 0.3s ease;
+}
+
+.draft-tag:hover .text {
+    opacity: 1;
+    
+}
+
+/* 為了讓標籤定位正確，確保父層有這個 */
+.ppt-frame {
+  position: relative;
+  display: block;
+}
+
+
+/* 2. 縮圖本身：直接給他固定尺寸，不被父層容器干擾 */
+.tag-thumb {
+  /* 關鍵：強制覆蓋掉 .slide img 的 width: 100% */
+  width: 25px !important; 
+  height: 35px !important; /* 因為是手機圖，給他直向的比例 */
+  flex-shrink: 0;
+  display: inline-block !important;
+  object-fit: cover !important;
+  border-radius: 4px; /* 稍微圓角就好 */
+  border: none;
+  margin-left: 3.5px; 
+}
+
+/* 3. 標籤文字 */
+.draft-tag .text {
+  font-size: 13px;
+  color: #333;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* 4. 移除原本可能干擾的容器設定 */
+.thumb-container {
+  display: contents; /* 這會讓容器「隱形」，不干擾圖片排版 */
+}
+
+:root {
+  --bg-sand: #f2e6d5;
+  --text-brown: #6d5d4b;
+  --glass-white: rgba(255, 255, 255, 0.25);
+}
+
+.accordion {
+  max-width: auto;
+  margin: 20px auto;
+  background: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(109, 93, 75, 0.05);
+}
+
+/* 標題列樣式 */
+.accordion-header {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  background: linear-gradient(
+        rgba(249, 244, 237, 0.7) 0%, 
+        rgba(255, 255, 255, 0.3) 50% 
+    );
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+ transition: background 0.7s;
+}
+
+.accordion-header:hover {
+  background: rgba(178, 143, 104, 0.1);
+}
+
+.glass-dots { 
+    display: flex; 
+    gap: 6px; 
+    width: 60px;
+    margin-right: 15px; 
+}
+.glass-dots .g-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--text-brown);
+  opacity: 0.3;
+}
+
+.glass-filename {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-brown);
+}
+
+.arrow-icon {
+    margin-left: 48px;
+    text-align: center;
+  font-size: 12px;
+  color: var(--text-brown);
+  transition: transform 0.3s;
+}
+
+/* 內容區塊動畫 */
+.accordion-content {
+    padding: 0 5px;
+  max-height: 0; /* 初始高度為 0 */
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, padding 0.5s;
+}
+
+
+
+.accordion.active > .accordion-header {
+    background: var(--foreground);
+}
+
+.accordion.active > .accordion-header .glass-filename {
+    color: #ffffff;
+}
+
+/* 當展開時的樣式 */
+.accordion.active > .accordion-content {
+  max-height: 5000px; /* 給一個足夠大的高度 */
+  border-top: 1px solid rgba(109, 93, 75, 0.1);
+}
+
+.accordion.active > .accordion-header .arrow-icon {
+  transform: rotate(180deg); /* 箭頭旋轉 */
+  color: #ffffff;
+}
+
+.accordion.active > .accordion-header .glass-dots .g-dot {
+    background-color: #ffffff;
+}
+
+.glass-body pre {
+  margin: 0;
+  padding: 20px;
+  color: var(--text-brown);
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+
+
+/*電腦版才套用的樣式*/
+@media (min-width: 685px) { 
   body, .main, .container {
     /* 把這個數值調小，內容就會往上提 */
     /* 如果你的 Header 是 60px，試試看設定為 60px 或 70px */
@@ -662,31 +1010,17 @@ html {
     max-height: 500px; /* 展開成就 */
 }
 
-  
 
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+  
 
-
-/*.excel-display {
-    padding: 10px;
-    background: linear-gradient(
-        rgba(249, 244, 237, 0.7) 0%, 
-        rgba(255, 255, 255, 0.3) 50% 
-    );
-    backdrop-filter: blur(20px) saturate(150%);
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-    border-radius: 0 10px 10px 0;
-    border: 0.01px solid rgba(255, 249, 243, 0.8);
-    border-left: 5px solid #a68d71;
-    box-shadow: 3px 3px 2px rgba(81, 51, 25, 0.2);
-    overflow: visible;
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
-    width: 100%; 
-    height: 500px;  
-    overflow: hidden;
-    text-align: center;
-}*/
+} /*電腦*/
 
 .title {
     letter-spacing: .1em;
@@ -940,8 +1274,9 @@ body {
 }
 
 .comparison-container {
+    border-bottom: 3px solid var(--foreground);
+    padding: 0 5px;
     padding-bottom: 30px;
-    border-bottom: 3px solid #3d2b1f;
 }
 
 .comp-card {
@@ -1200,6 +1535,8 @@ transform: scale(1.02);
   }
 
 }
+
+
 
 
 

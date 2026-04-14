@@ -268,72 +268,134 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let currentIndex = 0;
 
-// 當頁面載入完成後執行第一次顯示
-window.onload = function() {
+// 1. 儘早初始化輪播（不等待 Excel 載入）
+document.addEventListener("DOMContentLoaded", function() {
     showSlides(currentIndex);
-};
+});
 
-// 處理左右按鈕的點擊
+// 2. 處理「時好時壞」與「Excel 搶焦點」的保險機制
+window.addEventListener("load", function() {
+    // 確保重新整理時不跳動
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    // 強制置頂一次
+    window.scrollTo(0, 0);
+
+    // 針對輪播圖沒出來的情況：如果 DOMContentLoaded 失敗，這裏做第二次補強
+    showSlides(currentIndex);
+
+    // 延遲 200 毫秒再刷一次置頂，專門對付 Excel 載入後的自動聚焦 (Focus)
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+        // 模擬視窗縮放，強制瀏覽器重新渲染
+        window.dispatchEvent(new Event('resize'));
+    }, 200);
+});
+
 function moveSlide(n) {
     showSlides(currentIndex += n);
 }
 
-// 處理下方點點的點擊
 function currentSlide(n) {
     showSlides(currentIndex = n);
 }
 
-// 核心顯示邏輯
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("slide");
     let dots = document.getElementsByClassName("dot");
 
-    if (slides.length === 0) return; // 防錯機制
+    if (slides.length === 0) return;
 
-    // 循環邏輯：超過最後一張回第一張，小於第一張跳最後一張
     if (n >= slides.length) { currentIndex = 0; }
     if (n < 0) { currentIndex = slides.length - 1; }
 
-    // 1. 隱藏所有圖片
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
 
-    // 2. 移除所有點點的 active 樣式
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
 
-    // 3. 顯示當前圖片，並啟動對應點點
-    slides[currentIndex].style.display = "block";
-    if (dots.length > 0) {
+    // 這裡多加一個確認：確保元素存在
+    if (slides[currentIndex]) {
+        slides[currentIndex].style.display = "block";
+    }
+    if (dots.length > 0 && dots[currentIndex]) {
         dots[currentIndex].className += " active";
     }
 }
+
+// 在最外面定義這幾個變數，讓所有功能都能讀到狀態
+let currentScale = 1;
+let isDragging = false;
+let startX, startY, translateX = 0, translateY = 0;
 
 function openModal(src) {
     const modal = document.getElementById("myModal");
     const modalImg = document.getElementById("img01");
 
     if (modal && modalImg) {
-        modal.style.display = "flex"; // 開啟彈窗
-        modalImg.src = src;           // 載入圖片路徑
-        document.body.style.overflow = "hidden"; // 禁止背景捲動
-    } else {
-        console.error("找不到 Modal 元素");
+        // --- 重置位置與縮放 ---
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        modalImg.style.transform = `translate(0px, 0px) scale(1)`;
+        
+        modal.style.display = "flex";
+        modalImg.src = src;
+        document.body.style.overflow = "hidden";
+
+        // --- 外掛功能 1：滾輪縮放 ---
+        modal.onwheel = function(e) {
+            e.preventDefault();
+            const delta = e.deltaY > 0 ? -0.2 : 0.2;
+            currentScale = Math.min(Math.max(0.5, currentScale + delta), 5);
+            modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+        };
+
+        // --- 外掛功能 2：滑鼠抓取 ---
+        modalImg.onmousedown = function(e) {
+            if (currentScale <= 1) return; // 沒放大不給拖
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            modalImg.style.cursor = "grabbing";
+        };
     }
 }
+
+// --- 外掛功能 3：移動與放開 (這兩段放在 function 外，避免重複綁定) ---
+window.onmousemove = function(e) {
+    if (!isDragging) return;
+    const modalImg = document.getElementById("img01");
+    if (modalImg) {
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+    }
+};
+
+window.onmouseup = function() {
+    isDragging = false;
+    const modalImg = document.getElementById("img01");
+    if (modalImg) modalImg.style.cursor = "grab";
+};
 
 function closeModal() {
     const modal = document.getElementById("myModal");
     if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = "auto"; // 恢復背景捲動
+        document.body.style.overflow = "auto";
+        isDragging = false; // 關閉時重置拖拽狀態
     }
 }
 
-// 點擊圖片以外的地方也要能關閉
+// 點擊背景關閉
 window.onclick = function(event) {
     const modal = document.getElementById("myModal");
     if (event.target == modal) {
@@ -342,14 +404,12 @@ window.onclick = function(event) {
 };
 
 function toggleAccordion(element) {
-    // 找到點擊標題最近的那個 .accordion 容器
     const accordion = element.closest('.accordion');
-    
     if (accordion) {
-        // 切換 active 類別
         accordion.classList.toggle('active');
     }
 }
+
 
 </script>
 

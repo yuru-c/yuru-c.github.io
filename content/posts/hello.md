@@ -19,10 +19,10 @@ draft: false
         <h1 style="text-align: center;  line-height:30px; margin-top:30px;margin-bottom:5px; margin-left:-40px;font-size: 22px;">陳郁茹<br> yuru chen</h1>
         <div class="info-wrapper">
         <ul>
-            <li><span class="fa-li"><i class="fa-solid fa-envelope"></i></span><a href="mailto:shannon0137@gmail.com" class="mail">shannon0137@gmail.com</a></li>
-            <li><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span style="font-size:16px;">天主教輔仁大學數學系應用數學組</li>
+            <li style="margin-bottom: 10px;"><span class="fa-li"><i class="fa-solid fa-envelope"></i></span><a href="mailto:shannon0137@gmail.com" class="mail">shannon0137@gmail.com</a></li>
+            <li style="margin-bottom: 10px;"><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span style="font-size:16px;">天主教輔仁大學數學系應用數學組</li>
                     </ul>
-        <p style="font-size:14px; margin-left:-30px;  padding-left: 1.8em; text-indent: -1.4em;">※ 歡迎來到我的個人網頁！本網頁旨在提供更具深度與動態感的成果展示；基於資安考量，網頁內容已隱去具體之個人敏感資訊。</p><p style="font-size:14px; margin-left:-30px;  padding-left: 1.8em; text-indent: -1.4em;  margin-top:-20px;">※ 關於更詳細的<strong>個人資料與成績證明</strong>，已整理於郵件附件中。若有任何疑問或建議，歡迎隨時與我聯繫，謝謝您。</p>
+        <div style="padding-right: 40px;"><p style="font-size:14px; margin-left:-30px;  padding-left: 1.8em; text-indent: -1.4em;">※ 歡迎來到我的個人網頁！本網頁旨在提供更具深度與動態感的成果展示；基於資安考量，網頁內容已隱去具體之個人敏感資訊。</p><p style="font-size:14px; margin-left:-30px;  padding-left: 1.8em; text-indent: -1.4em;  margin-top:-20px;">※ 關於更詳細的<strong>個人資料與成績證明</strong>，已整理於郵件附件中。若有任何疑問或建議，歡迎隨時與我聯繫，謝謝您。</p></div>
         </div>
     </div>
 </div>
@@ -172,15 +172,15 @@ draft: false
 <h1 id="research" class="title" ><i class="fa-solid fa-magnifying-glass"> 研究動機與自我定位</h1></i>
 <div  class="research-section">
         <ul style="font-size:16px; line-height: 2.5;">
-            <li><strong>【學習背景：從數理邏輯到程式實作】</strong><br>
+            <li><strong style="font-size:18px;">【學習背景：從數理邏輯到程式實作】</strong><br>
 我畢業於數學系，在校期間除了數學專業課外，對於程式實作科目也有進一步的學習。在 Java、資料結構與作業系統等資工核心科目中也展現正向的學業成效。雖然畢業後有一段時間未接觸開發，且深知實務經驗仍有成長空間，但這段學習經歷讓我確認自己並不排斥程式實作，反而對邏輯轉換過程有所興趣；因此在經歷職場磨練並決心重返校園時，這份學習經驗成為我選擇轉向資工領域的關鍵契機。</li>
-            <li style="padding-top:15px;"><strong>【職場經歷與問題解決：標準化與整合化】</strong><br>
+            <li style="padding-top:15px;"><strong  style="font-size:18px;">【職場經歷與問題解決：標準化與整合化】</strong><br>
 畢業後的兩份工作雖然偏向行政與管理，但我習慣尋找更具效率的作業方式，將邏輯思考應用於實務：<ul style="margin-left:10px;">
 
 <li>● 管理實務（流程標準化）： 在第一份工作期間，我因熟悉業務並具備實務處理經驗獲留任並晉升督導。除了負責人力調度，我進一步將經驗整理為 SOP 作業手冊，這除了輔助教育訓練過程，也讓團隊的行政流程更具穩定性。</li>
 
-<li>● 工具實作（邏輯整合化）： 擔任專任助理時，面對每年累積的大量申請資料，因現有資源無法支援複雜審查，我以 Excel 邏輯公式設計了整合式申請表， 將傳統的「人工核對」改為透過公式進行「邏輯判定」，包含判定時效、核算點數，處理了跨年度重複審查的作業，減少人為核算誤差並優化審查速度。</li></ul>
-</li><li><strong>【研究動機與展望：持續探索與深化研究能力】</strong><br> 在接觸資訊領域的過程中，我對計算機圖學能將抽象數據轉化為具體視覺成果的特性深感興趣。這種視覺化產出的過程，讓理論實踐更有實感，也促使我選擇投入此領域作為研究方向。<br>
+<li style="margin-bottom:0px;">● 工具實作（邏輯整合化）： 擔任專任助理時，面對每年累積的大量申請資料，因現有資源無法支援複雜審查，我以 Excel 邏輯公式設計了整合式申請表， 將傳統的「人工核對」改為透過公式進行「邏輯判定」，包含判定時效、核算點數，處理了跨年度重複審查的作業，減少人為核算誤差並優化審查速度。</li></ul>
+</li><li style="padding-top:15px;"><strong  style="font-size:18px;">【研究動機與展望：持續探索與深化研究能力】</strong><br> 在接觸資訊領域的過程中，我對計算機圖學能將抽象數據轉化為具體視覺成果的特性深感興趣。這種視覺化產出的過程，讓理論實踐更有實感，也促使我選擇投入此領域作為研究方向。<br>
 雖然目前在此專業領域上仍有精進空間，但我期望未來能透過持續的實作與開發，逐步深化技術能力，並累積穩固的研究基礎。
 </li>
         </ul>
@@ -193,10 +193,12 @@ draft: false
 <div class="display-container" style="margin-bottom:10px">
 <div class="accordion">
   <div class="accordion-header" onclick="toggleAccordion(this)">
-    <span class="glass-filename" style="font-size:20px; font-weight: bold; text-align: center; margin-left: 48px;">A. EXCEL 整合式申請表</span>
+    <span class="glass-filename">A. EXCEL 整合式申請表</span>
     <span class="arrow-icon">▼</span>
   </div>
 <div class="accordion-content">
+<strong style="margin-top:10px; margin-bottom:0px;">設計背景：</strong><p style="font-size:16px; margin-top:0px; padding:0 15px;">
+由於申請資料包含長達 10 年的歷程（後續改為5年），過去使用 紙本填寫缺乏連續性，導致申請人易誤填資料，審查端也必須耗費大量時間逐筆翻閱舊檔核對。為了優化這類重複性庶務，我設計了 Excel 申請表，將零散紀錄整合化，實現資料自動勾稽並提升審核準確度。</p>
 <div class="comparison-container" >
   <div class="comparison-header">
     <div class="comp-card legacy">
@@ -266,7 +268,7 @@ draft: false
     </div>
     <div class="excel-display">
     <iframe src="https://1drv.ms/x/c/73b1cde18a4d20c7/IQTQCJOX71ueSbGBbXcylEGmAf-oAclUp9hFzVi38szUVeE?em=2&wdAllowInteractivity=False&AllowTyping=True&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True" width="100%" 
-        height="800px" 
+        height="800px" tabindex="-1"
         style="border: 1px solid #ccc; border-radius: 8px;" 
         frameborder="0" 
         scrolling="no"></iframe>
@@ -274,7 +276,7 @@ draft: false
 </div></div></div>
 <div class="accordion">
   <div class="accordion-header" onclick="toggleAccordion(this)">
-    <span class="glass-filename" style="font-size:20px; font-weight: bold; text-align: center; margin-left: 48px;">B. App 介面佈局實作練習</span>
+    <span class="glass-filename">B. App 介面佈局實作練習</span>
     <span class="arrow-icon">▼</span>
   </div>
 <div class="accordion-content">
@@ -282,16 +284,16 @@ draft: false
    <div class="carousel-container">
    <strong style="margin-top:10px; margin-bottom:0px;">專題背景：</strong><p style="font-size:16px; margin-top:0px; padding:0 15px;">
 本專題源於大學時期打工的實際觀察。當時發現職場在薪資計算、出勤打卡與資訊傳遞（公告）上存在效率低落與溝通斷層的問題，因此以整合雇主與員工需求的行動應用程式作為專題主題。</p>
-      <p style="font-size:16px; margin:0px; padding:0 15px; font-weight:bold;">※ 因為主要負責 UI 佈局及功能設計，加上專案開發時間較久遠，故僅展示部分開發紀錄與部分介面原始碼。</p>
+      <p style="font-size:16px; margin:0 0 20px 0; padding:0 15px; font-weight:bold;">※ 因為主要負責 UI 佈局及功能設計，加上專案開發時間較久遠，故僅展示部分開發紀錄與部分介面原始碼。</p>
       <div class="carousel">
               <p class="label">PPT展示</p>
 <div class="slide fade">
           <div class="main-display-container">
             <div class="ppt-frame">
               <img src="/img/app_1.png" alt="PPT1" class="main-img" onclick="openModal(this.src)">
-              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_1.png')">
+              <div class="draft-tag light " onclick="event.stopPropagation(); openModal('/img/phone_1.jpg')">
                 <div class="thumb-container">
-                  <img src="/img/phone_1.png" class="tag-thumb">
+                  <img src="/img/phone_1.jpg" class="tag-thumb">
                 </div>
                 <span class="text">查看原稿</span>
               </div>
@@ -303,9 +305,9 @@ draft: false
           <div class="main-display-container">
             <div class="ppt-frame">
               <img src="/img/app_2.png" alt="PPT2" class="main-img" onclick="openModal(this.src)">
-              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_2.png')">
+              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_2.jpg')">
                 <div class="thumb-container">
-                  <img src="/img/phone_2.png" class="tag-thumb">
+                  <img src="/img/phone_2.jpg" class="tag-thumb">
                 </div>
                 <span class="text">查看原稿</span>
               </div>
@@ -325,9 +327,9 @@ draft: false
           <div class="main-display-container">
             <div class="ppt-frame">
               <img src="/img/app_4.png" alt="PPT4" class="main-img" onclick="openModal(this.src)">
-              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_4.png')">
+              <div class="draft-tag light" onclick="event.stopPropagation(); openModal('/img/phone_4.jpg')">
                 <div class="thumb-container">
-                  <img src="/img/phone_4.png" class="tag-thumb">
+                  <img src="/img/phone_4.jpg" class="tag-thumb">
                 </div>
                 <span class="text">查看原稿</span>
               </div>
@@ -339,9 +341,9 @@ draft: false
           <div class="main-display-container">
             <div class="ppt-frame">
               <img src="/img/app_5.png" alt="PPT5" class="main-img" onclick="openModal(this.src)">
-              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_5.png')">
+              <div class="draft-tag" onclick="event.stopPropagation(); openModal('/img/phone_5.jpg')">
                 <div class="thumb-container">
-                  <img src="/img/phone_5.png" class="tag-thumb">
+                  <img src="/img/phone_5.jpg" class="tag-thumb">
                 </div>
                 <span class="text">查看原稿</span>
               </div>
@@ -351,62 +353,102 @@ draft: false
 
 <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
         <a class="next" onclick="moveSlide(1)">&#10095;</a>
-      </div> 
-      <div style="text-align:center; margin-top: 10px;">
+        <div style="text-align:center; margin-top: -24px; 
+    border-radius:0 0 8px 8px  ;">
         <span class="dot" onclick="currentSlide(0)"></span> 
         <span class="dot" onclick="currentSlide(1)"></span> 
         <span class="dot" onclick="currentSlide(2)"></span> 
         <span class="dot" onclick="currentSlide(3)"></span> 
         <span class="dot" onclick="currentSlide(4)"></span> 
       </div>
-    </div>
-<div class="accordion"> <div class="accordion-header" onclick="event.stopPropagation(); toggleAccordion(this)">
+      </div> 
+          </div>
+          <div class="accordion-container">
+<div class="accordion left-side" id="acc-left"> <div class="accordion-header dark" onclick="this.parentElement.classList.toggle('active')">
     <div class="glass-dots">
       <span class="g-dot"></span>
       <span class="g-dot"></span>
       <span class="g-dot"></span>
     </div>
-    <span class="glass-filename">View XML Layout</span>
+    <span class="glass-filename" style="font-size:16px; margin-left: 0px; ">View XML Layout</span>
     <span class="arrow-icon">▼</span>
   </div>
-  <div class="accordion-content" style="background: #826f5a;">
+  <div class="accordion-content left-side-content" style="background: #826f5a;">
     <div class="glass-body">
-    <pre><code style="color:#FFF;">
+    <pre><code>
 &lt;RelativeLayout
     android:id="@+id/button_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    android:padding="10dp"&gt;
-
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"&gt;</code>
+<code>
 &lt;Button
-        android:id="@+id/save_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn_add_time"
-        android:text="發布公告"
-        android:textColor="#ffffffff"
-        android:textSize="18sp" /&gt;
-
-&lt;/RelativeLayout&gt;
-
+    android:id="@+id/save_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_add_time"
+    android:gravity="center"
+    android:text="發布公告"
+    android:textColor="#ffffffff"
+    android:textSize="18sp" /&gt;</code>
+<code>
+&lt;/RelativeLayout&gt;</code>
+<code>
 &lt;ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_above="@+id/button_layout"
-    android:padding="5dp"&gt;
-
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:paddingTop="5dp"&gt;</code>
+<code>
 &lt;LinearLayout
-        android:id="@+id/content_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"&gt;
-
-&lt;/LinearLayout&gt;
-
+    android:id="@+id/content_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"&gt;</code>
+<code>
+&lt;/LinearLayout&gt;</code>
+<code>
 &lt;/ScrollView&gt;
     </code></pre>
   </div>
+</div>  </div>
+<div class="accordion right-side" id="acc-right">
+<div class="accordion-header dark" onclick="this.parentElement.classList.toggle('active')">
+    <div class="glass-dots">
+      <span class="g-dot"></span>
+      <span class="g-dot"></span>
+      <span class="g-dot"></span>
+    </div>
+    <span class="glass-filename" style="font-size:16px; margin-left: 0px; ">說明</span>
+    <span class="arrow-icon">▼</span>
+  </div>
+  <div class="accordion-content" style="background: #826f5a;">
+    <div class="glass-body" style="color: #ffffff; padding:10px;">
+  <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+    
+  <div>
+      <strong style="display: block; font-size: 16px; margin-bottom: 5px;">📌 定位方式</strong>
+      <p style="margin: 0; font-size: 14px; opacity: 0.8;">採用「底部吸附」設計，確保發布按鈕不被遮擋。</p>
+    </div>
+
+  <hr style="border: 0; border-top: 1px solid rgba(109, 93, 75, 0.1); margin: 5px 0;">
+
+  <div>
+      <strong style="display: block; font-size: 16px; margin-bottom: 5px;">📱 互動體驗</strong>
+      <p style="margin: 0; font-size: 14px; opacity: 0.8;">內容區支援無限捲動，適用於長短不一的公告資訊。</p>
+    </div>
+
+  </div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -415,4 +457,3 @@ draft: false
 <div id="myModal" class="modal" onclick="closeModal()">
   <img class="modal-content" id="img01">
 </div>
-

@@ -407,7 +407,7 @@ html {
 .post ul li {
     position: relative;
     padding-left: 0 !important;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .display-container {
@@ -424,14 +424,15 @@ html {
   overflow: hidden; /* 防止圖片溢出 */
   padding: 0 34px;
   border-radius: 10px;
+  background-color: rgba(130, 96, 64, 0.2);
 }
 
 .label {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 0;
     font-weight: bold;
     text-align: center;
-    background: rgba(132, 102, 64, 0.2);
+    border-radius: 8px 8px 0 0 ;
 }
 
 .slide {
@@ -478,7 +479,7 @@ html {
   height: 12px;
   width: 12px;
   margin: 0 5px;
-  background-color: #bbb;
+  background-color: #f0f0f0;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -488,40 +489,35 @@ html {
   background-color: #717171; /* 作用中或游標移上去的顏色 */
 }
 
-/* 彈窗背景：確保它是滿版黑 */
-.modal {
-  display: none;
-  position: fixed;    /* 絕對關鍵：固定在視窗，不隨內容排版 */
-  z-index: 99999;     /* 層級設到最高 */
-  left: 0;
-  top: 0;
-  width: 100vw;       /* 視窗全寬 */
-  height: 100vh;      /* 視窗全高 */
-  background-color: rgba(0, 0, 0, 0.9); /* 背景變黑 */
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw; /* 使用視窗寬度 */
+    height: 100vh; /* 使用視窗高度 */
+    background-color: rgba(0, 0, 0, 0.9);
+    
+    /* 核心：確保內容絕對居中 */
+    display: none; /* JS 會切換成 flex */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
 }
 
-/* 放大後的圖片 */
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 90%;     /* 限制最大寬度，避免跑出螢幕 */
-  max-height: 85vh;   /* 限制最大高度 */
-  
-  cursor: pointer;
-  
-  /* 讓圖片在視窗正中間 */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  
-  /* 動畫效果（選配） */
-  animation: zoom 0.3s;
-}
-
-@keyframes zoom {
-  from {transform: translate(-50%, -50%) scale(0.5); opacity: 0;}
-  to {transform: translate(-50%, -50%) scale(1); opacity: 1;}
+#img01 {
+    /* 移除所有可能導致偏移的 margin */
+    margin: auto !important; 
+    
+    /* 縮放核心設定 */
+    transition: transform 0.1s ease-out;
+    transform-origin: center center !important; /* 強制從中心縮放 */
+    
+    /* 初始顯示大小設定 */
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* 確保比例正常 */
 }
 
 /* 外層容器 */
@@ -543,7 +539,6 @@ html {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
   border: none !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   cursor: pointer;
@@ -553,8 +548,8 @@ html {
 /* 標籤本體 */
 .draft-tag {
   position: absolute;
-  bottom: 15px;
-  left: 15px;
+  bottom: 18px;
+  left: 18px;
   background: rgba(255, 255, 255, 0.4); 
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -577,11 +572,23 @@ html {
   animation: pulse-border 2s infinite;
 }
 
+.light {
+  background: rgba(72, 91, 75, 0.4); 
+  animation: pulse-border-light 2s infinite;
+}
+
 @keyframes pulse-border {
   0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
   70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
   100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
+
+@keyframes pulse-border-light {
+  0% { box-shadow: 0 0 0 0 rgba(72, 91, 75, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(72, 91, 75, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(72, 91, 75, 0); }
+}
+
 
 /* 滑鼠移上去的效果 */
 .draft-tag:hover {
@@ -590,6 +597,11 @@ html {
   background: rgba(255, 255, 255, 0.9);
   transform: translateY(-2px);         /* 輕微浮起 */
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.light:hover {
+    background: rgba(72, 91, 75, 0.9); 
+    box-shadow: 0 6px 12px rgba(72, 91, 75, 0.4);
 }
 
 .draft-tag .icon {
@@ -603,6 +615,10 @@ html {
   white-space: nowrap; /* 防止文字換行 */
   opacity: 0;              /* 初始隱藏 */
   transition: opacity 0.3s ease;
+}
+
+.light .text {
+    color: #dee0de !important;
 }
 
 .draft-tag:hover .text {
@@ -652,7 +668,7 @@ html {
 .accordion {
   max-width: auto;
   margin: 20px auto;
-  background: none;
+  background:#ffffff20;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -676,6 +692,16 @@ html {
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
  transition: background 0.7s;
+ box-shadow: 3px 3px 2px rgba(81, 51, 25, 0.2);
+    position: relative; 
+  z-index: 1;
+  margin-bottom: 3px;
+  margin-right: 3px;
+  border-radius: 12px;
+}
+
+.dark {
+  background: rgba(130, 96, 64, 0.2);
 }
 
 .accordion-header:hover {
@@ -686,7 +712,7 @@ html {
     display: flex; 
     gap: 6px; 
     width: 60px;
-    margin-right: 15px; 
+    margin-right: 0px; 
 }
 .glass-dots .g-dot {
   width: 8px; height: 8px;
@@ -698,9 +724,10 @@ html {
 .glass-filename {
   flex-grow: 1;
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   color: var(--text-brown);
+  margin-left: 48px;"
 }
 
 .arrow-icon {
@@ -723,6 +750,8 @@ html {
 
 .accordion.active > .accordion-header {
     background: var(--foreground);
+    border-radius: 0;
+    margin-right: 0;
 }
 
 .accordion.active > .accordion-header .glass-filename {
@@ -746,13 +775,36 @@ html {
 
 .glass-body pre {
   margin: 0;
-  padding: 20px;
+  padding: 0 15px;
   color: var(--text-brown);
   font-family: monospace;
   font-size: 14px;
   line-height: 1.6;
   overflow-x: auto;
 }
+
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion-content > strong, .carousel-container strong {
+    display: block; 
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+
+.glass-body code {
+  color: #FFF;
+  padding: 0 !important;
+  margin-top: -5px;
+}
+
 
 
 
@@ -1010,13 +1062,113 @@ html {
     max-height: 500px; /* 展開成就 */
 }
 
-
-.carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.draft-tag {
+  bottom: 25px;
+  left: 25px;
+  width: 80px;           /* 寬度與高度相等 */
+  height: 80px;
+  padding: 4px;          /* 內距讓照片縮小一點點待在圓圈內 */
 }
+
+@keyframes pulse-border-light {
+  0% { box-shadow: 0 0 0 0 rgba(72, 91, 75, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(72, 91, 75, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(72, 91, 75, 0); }
+}
+
+.draft-tag:hover {
+    width: 180px;
+}
+
+.draft-tag .text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.tag-thumb {
+  width: 35px !important; 
+  height: 55px !important; /* 因為是手機圖，給他直向的比例 */
+  margin-left: 17px; 
+}
+
+.accordion-container {
+  display: flex !important;
+  flex-direction: row !important; /* 電腦版橫向並排 */
+  gap: 20px !important;
+  align-items: flex-start !important; /* 關鍵：確保展開時，另一邊標題不動 */
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-left: -20px;
+}
+
+/* 左邊固定佔 70% */
+.left-side {
+    flex: 0 0 65%; 
+}
+
+/* 右邊固定佔 30% (扣除 gap 間距) */
+.right-side {
+    flex: 1;
+}
+
+/* 1. 外層容器：同時負責垂直與水平捲動 */
+.accordion.active > .left-side-content {
+    max-height: 230px;
+    /* 核心修改：兩向都允許捲動 */
+    overflow: auto; 
+    padding: 0 !important;
+    position: relative;
+    background-color: #826f5a; 
+    display: flex; /* 確保子元素高度撐滿 */
+}
+
+/* 2. 內層 pre：取消它自己的捲動，交給父層 */
+.left-side-content pre {
+    display: block;
+    margin: -10px 0; /* 建議調整 margin，避免遮擋捲軸 */
+    
+    /* 核心修改：關閉 pre 自己的捲動，避免雙重捲軸 */
+    overflow: visible !important; 
+    white-space: pre !important;
+    word-wrap: normal !important;
+    
+    width: max-content; /* 讓 pre 根據內容撐開寬度 */
+    min-width: 100%;
+    background-color: #826f5a; 
+}
+
+/* 3. 內層 code：保持 inline-block 確保寬度被撐開 */
+.left-side-content pre code {
+    display: inline-block !important;
+    min-width: 100%;
+    padding: 15px; /* 原本 pre 的間距建議移到這裡 */
+    box-sizing: border-box;
+}
+
+/* 4. 優化捲軸樣式 */
+/* 現在統一調整容器的捲軸即可 */
+.left-side-content::-webkit-scrollbar {
+    width: 8px;  /* 垂直寬度 */
+    height: 8px; /* 水平高度 */
+}
+
+.left-side-content::-webkit-scrollbar-track {
+    /* 捲軸軌道也要設為深色，垂直捲軸才會顯得完整 */
+    background-color: #826f5a; 
+}
+
+.left-side-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.left-side-content::-webkit-scrollbar-corner {
+    background-color: #826f5a; 
+}
+
+
+
 
   
 
@@ -1071,7 +1223,7 @@ body {
     radial-gradient(at 100% 0%, #fef4ef 0px, transparent 50%),
     radial-gradient(at 0% 50%, #F9F3EB 0px, transparent 50%),
     radial-gradient(at 100% 50%, #f2e6d5 0px, transparent 50%),
-    radial-gradient(at 0% 100%, #ebd2b5 0px, transparent 50%),
+    radial-gradient(at 0% 100%, #ffffff 0px, transparent 50%),
     radial-gradient(at 50% 100%, #e1c9ad 0px, transparent 50%),
     radial-gradient(at 100% 100%, #F9F3EB 0px, transparent 50%);
   background-size: 200% 200%;
@@ -1197,7 +1349,7 @@ body {
   }
 
   .excel-display {
-    padding: 10px;
+    padding: 2px;
     background: linear-gradient(
         rgba(249, 244, 237, 0.7) 0%, 
         rgba(255, 255, 255, 0.3) 50% 
@@ -1209,7 +1361,7 @@ body {
     overflow: visible;
     transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
     width: 100%; 
-    height: 567px;  
+    height: 560px;  
     overflow: hidden;
     text-align: center;
     
@@ -1534,10 +1686,64 @@ transform: scale(1.02);
     padding: 20PX;
   }
 
+/* 1. 外層容器：同時負責垂直與水平捲動 */
+.accordion.active > .left-side-content {
+    max-height: 230px;
+    /* 核心修改：兩向都允許捲動 */
+    overflow: auto; 
+    padding: 0 !important;
+    position: relative;
+    background-color: #826f5a; 
+    display: flex; /* 確保子元素高度撐滿 */
 }
 
+/* 2. 內層 pre：取消它自己的捲動，交給父層 */
+.left-side-content pre {
+    display: block;
+    margin: -10px 0; /* 建議調整 margin，避免遮擋捲軸 */
+    
+    /* 核心修改：關閉 pre 自己的捲動，避免雙重捲軸 */
+    overflow: visible !important; 
+    white-space: pre !important;
+    word-wrap: normal !important;
+    
+    width: max-content; /* 讓 pre 根據內容撐開寬度 */
+    min-width: 100%;
+    background-color: #826f5a; 
+}
+
+/* 3. 內層 code：保持 inline-block 確保寬度被撐開 */
+.left-side-content pre code {
+    display: inline-block !important;
+    min-width: 100%;
+    padding: 15px; /* 原本 pre 的間距建議移到這裡 */
+    box-sizing: border-box;
+}
+
+/* 4. 優化捲軸樣式 */
+/* 現在統一調整容器的捲軸即可 */
+.left-side-content::-webkit-scrollbar {
+    width: 8px;  /* 垂直寬度 */
+    height: 8px; /* 水平高度 */
+}
+
+.left-side-content::-webkit-scrollbar-track {
+    /* 捲軸軌道也要設為深色，垂直捲軸才會顯得完整 */
+    background-color: #826f5a; 
+}
+
+.left-side-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.left-side-content::-webkit-scrollbar-corner {
+    background-color: #826f5a; 
+}
+
+  
 
 
-
+}
 
 

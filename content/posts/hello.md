@@ -22,7 +22,7 @@ draft: false
             <li style="margin-bottom: 10px;"><span class="fa-li"><i class="fa-solid fa-envelope"></i></span><a href="mailto:shannon0137@gmail.com" class="mail">shannon0137@gmail.com</a></li>
             <li style="margin-bottom: 10px;"><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span style="font-size:16px;">天主教輔仁大學數學系應用數學組</li>
                     </ul>
-        <div style="padding-right: 40px;"><p style="font-size:14px; margin-left:-30px;  padding-left: 1.8em; text-indent: -1.4em;">※ 歡迎來到我的個人網頁！本網頁旨在提供更具深度與動態感的成果展示；基於資安考量，網頁內容已隱去具體之個人敏感資訊。</p><p style="font-size:14px; margin-left:-30px;  padding-left: 1.8em; text-indent: -1.4em;  margin-top:-20px;">※ 關於更詳細的<strong>個人資料與成績證明</strong>，已整理於郵件附件中。若有任何疑問或建議，歡迎隨時與我聯繫，謝謝您。</p></div>
+        <div><p style="font-size:14px; margin-left:-30px;  padding-left: 1.8em; text-indent: -1.4em;">※ 歡迎來到我的個人網頁！本網頁旨在提供更具深度與動態感的成果展示；基於資安考量，網頁內容已隱去具體之個人敏感資訊。</p><p style="font-size:14px; margin-left:-30px;  padding-left: 1.8em; text-indent: -1.4em;  margin-top:-20px;">※ 關於更詳細的<strong>個人資料與成績證明</strong>，已整理於郵件附件中。若有任何疑問或建議，歡迎隨時與我聯繫，謝謝您。</p></div>
         </div>
     </div>
 </div>

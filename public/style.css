@@ -1114,7 +1114,7 @@ html {
 
 /* 1. 外層容器：同時負責垂直與水平捲動 */
 .accordion.active > .left-side-content {
-    max-height: 230px;
+    max-height: 241px;
     /* 核心修改：兩向都允許捲動 */
     overflow: auto; 
     padding: 0 !important;
@@ -1415,7 +1415,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   margin-top: 20px; /* 與下方步驟保持距離 */
   padding: 0;
   width: auto;
@@ -1481,7 +1481,7 @@ transform: scale(1.02);
 .comp-vs {
   font-family: serif;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #9a7979;
   font-weight: bold;
   opacity: 0.6;
@@ -1747,3 +1747,8 @@ transform: scale(1.02);
 }
 
 
+@media (min-width: 684px) and (max-width: 877px) {
+.accordion.active > .left-side-content {
+    max-height: 267px;    
+}
+}

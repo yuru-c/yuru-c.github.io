@@ -229,7 +229,7 @@ draft: false
 </div>
 
 <section class="excel-container">
-<p style="margin-top:30px; margin-bottom:0px; padding-bottom:0px; font-size:14px; padding-left: 1.5em; text-indent: -1.2em; ">※ 本表單僅供功能演示，已移除部分資訊及功能。</p><p style="font-size:14px; margin:0; padding-left: 1.5em; text-indent: -1.2em; ">※ 建議使用電腦操作，如顯示錯誤，請更新頁面。</p><p style="font-size:14px; margin:0; padding-left: 1.5em; text-indent: -1.2em; ">※ 申請表補充：</p><p style="font-size:14px; margin:0; padding-left: 2.8em; text-indent: -1.2em; ">1. 此表設定每筆適用年限為5年，每2點為一基數，其作為核發金額基準。</p><p style="font-size:14px; margin:0; padding-left: 2.8em; text-indent: -1.2em; margin-bottom:30px;">2. 點擊「點此移至空白欄位填寫」可跳至空白欄位做填寫。</p>
+<p style="margin-top:30px; margin-bottom:0px; padding-bottom:0px; font-size:14px; padding-left: 1.5em; text-indent: -1.2em; ">※ 本表單僅供功能演示，已移除部分資訊及功能。</p><p style="font-size:14px; margin:0; padding-left: 1.5em; text-indent: -1.2em; ">※ 建議使用電腦操作。非電腦用戶務必先行填寫「當年度」以喚起鍵盤；如顯示錯誤，請更新頁面。</p><p style="font-size:14px; margin:0; padding-left: 1.5em; text-indent: -1.2em; ">※ 申請表補充：</p><p style="font-size:14px; margin:0; padding-left: 2.8em; text-indent: -1.2em; ">1. 此表設定每筆適用年限為5年，每2點為一基數，其作為核發金額基準。</p><p style="font-size:14px; margin:0; padding-left: 2.8em; text-indent: -1.2em; margin-bottom:30px;">2. 點擊「點此移至空白欄位填寫」可跳至空白欄位做填寫。</p>
 <div class="excel-guide-container">
   <div class="step-nav">
     <div class="step-box" id="step1">

@@ -422,12 +422,7 @@ draft: false
 </div>  </div>
 <div class="accordion right-side" id="acc-right">
 <div class="accordion-header dark" onclick="this.parentElement.classList.toggle('active')">
-    <div class="glass-dots">
-      <span class="g-dot"></span>
-      <span class="g-dot"></span>
-      <span class="g-dot"></span>
-    </div>
-    <span class="glass-filename" style="font-size:16px; margin-left: 0px; ">說明</span>
+      <span class="glass-filename" style="font-size:16px;">說明</span>
     <span class="arrow-icon">▼</span>
   </div>
   <div class="accordion-content" style="background: #826f5a;">

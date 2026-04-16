@@ -1327,7 +1327,7 @@ body {
     line-height: 1.8;
     color: #444 ;
     padding-left: 1.5rem;
-    text-indent: -1rem; 
+    text-indent: -1.3rem; 
     box-sizing: border-box;
   }
 
@@ -1761,6 +1761,12 @@ transform: scale(1.02);
 
 @media (min-width: 684px) and (max-width: 877px) {
 .accordion.active > .left-side-content {
-    max-height: 266.24px;    
+    max-height: 266px;    
 }
+
+.step-text {    
+    padding-left: 1.5rem;
+    text-indent: 0.9rem; 
+  }
+
 }

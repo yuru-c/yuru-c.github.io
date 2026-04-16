@@ -809,6 +809,15 @@ html {
   margin-top: -5px;
 }
 
+.indentation {
+  font-size:14px; 
+  margin:0 0 20px 9.5px; 
+  padding:0 15px; 
+  text-align: left;
+  padding-left: 1.6em; 
+  text-indent: -1.2em;
+}
+
 
 
 
@@ -1306,7 +1315,6 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 0px;
-    padding-top: 5px;
   }
 
   .step-info {
@@ -1327,7 +1335,7 @@ body {
     line-height: 1.8;
     color: #444 ;
     padding-left: 1.5rem;
-    text-indent: -1.3rem; 
+    text-indent: -1.2rem; 
     box-sizing: border-box;
   }
 
@@ -1651,14 +1659,14 @@ transform: scale(1.02);
 }
 
   .step-nav { flex-direction: column; gap: 5px; margin-bottom: 10px; align-items: center;}
-    .step-box { width: 100%; border-radius: 10px; justify-content: center;padding-bottom: 35px;}
+    .step-box { width: 100%; border-radius: 10px; justify-content: center;padding-bottom: 15px;padding-top: 10px;}
     .step-arrow { transform: rotate(90deg); margin: -3px;}
     .excel-frame-container { height: 450px; border-radius: 15px; }
  .step-text {
     margin: 0px;
     line-height: 1.6;
-    padding-left: 1.5rem;
-    text-indent: 0.9rem;
+    padding-left: 1.25rem;
+    text-indent: -1.25rem;
   }
 
 .step-box.active {
@@ -1763,12 +1771,12 @@ transform: scale(1.02);
 
 @media (min-width: 684px) and (max-width: 877px) {
 .accordion.active > .left-side-content {
-    max-height: 265px;    
+    max-height: 264.5px;    
 }
 
 .step-text {    
-    padding-left: 1.5rem;
-    text-indent: 0.9rem; 
+    padding-left: 1.25rem;
+    text-indent: -1.25rem; 
   }
 
 }

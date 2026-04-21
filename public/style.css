@@ -1551,6 +1551,11 @@ transform: scale(1.02);
         background: #ffffff;
         border: 1px solid #a68d71;
         border-radius: 10px;
+    }    
+
+    .c-tag {
+      padding-left:12px;
+
     }
 
     .skill-item:hover .skill-tag {
@@ -1600,6 +1605,10 @@ transform: scale(1.02);
     font-size: 25px !important;
     margin-top: 0;  /* 移除 -5%，靠父層 align-items: center 對齊 */
     flex-shrink: 0; /* 防止圖示被擠壓變形 */  
+    }
+
+    .c-info {
+      margin-left: 10px;
     }
 
     .sill-text {
@@ -1666,7 +1675,7 @@ transform: scale(1.02);
     margin: 0px;
     line-height: 1.6;
     padding-left: 1.15rem;
-    text-indent: -1.15rem;
+    text-indent: -1.05rem;
   }
 
 .step-box.active {
@@ -1769,6 +1778,11 @@ transform: scale(1.02);
 
 .indentation {  
   padding-left: 1.6em; 
+  text-indent: -1.08em;
+}
+
+.indentation-num {
+  padding-left: 1.6em; 
   text-indent: -1.1em;
 }
 
@@ -1781,7 +1795,7 @@ transform: scale(1.02);
 
 @media (min-width: 684px) and (max-width: 877px) {
 .accordion.active > .left-side-content {
-    max-height: 264.2px;    
+    max-height: 264.18px;    
 }
 
 .step-text {    

@@ -36,9 +36,9 @@ draft: false
             <strong class="skill-class"><i class="fa-solid fa-code"></i> 程式語言 [基礎]：</strong><br>
             
 <div class="skill-item">
-                <div class="skill-tag">
-                    <i class="devicon-cplusplus-plain skill-icon"></i>
-                              <div class="skill-info">
+                <div class="skill-tag c-tag">
+                    <i class="devicon-cplusplus-plain skill-icon "></i>
+                              <div class="skill-info c-info">
                         <span class="skill-name">C++</span>
                         <span class="skill-desc">具備基本語法概念</span>
                     </div>
@@ -229,7 +229,7 @@ draft: false
 </div>
 
 <section class="excel-container">
-<p class="indentation" style="margin-top:20px; margin-bottom:0px;">※ 本表單僅供功能演示，已移除部分資訊及功能。</p><p class="indentation" style="margin-bottom:0; ">※ 建議使用電腦操作。非電腦用戶務必先行填寫「當年度」以喚起鍵盤；如顯示錯誤，請更新頁面。</p><p class="indentation" style="margin-bottom:0;">※ 申請表補充：</p><p class="indentation" style="margin-bottom:0;margin-left:26px;">1. 此表設定每筆適用年限為5年，每2點為一基數，其作為核發金額基準。</p><p class="indentation" style="margin-bottom:0;margin-left:26px; margin-bottom:30px;">2. 點擊「點此移至空白欄位填寫」可跳至空白欄位做填寫。</p>
+<p class="indentation" style="margin-top:20px; margin-bottom:0px;">※ 本表單僅供功能演示，已移除部分資訊及功能。</p><p class="indentation" style="margin-bottom:0; ">※ 建議使用電腦操作。非電腦用戶務必先行填寫「當年度」以喚起鍵盤；如顯示錯誤，請更新頁面。</p><p class="indentation" style="margin-bottom:0;">※ 申請表補充：</p><p class="indentation indentation-num" style="margin-bottom:0;margin-left:26px;">1. 此表設定每筆適用年限為5年，每2點為一基數，其作為核發金額基準。</p><p class="indentation indentation-num" style="margin-bottom:0;margin-left:26px; margin-bottom:30px;">2. 點擊「點此移至空白欄位填寫」可跳至空白欄位做填寫。</p>
 <div class="excel-guide-container">
   <div class="step-nav">
     <div class="step-box" id="step1">

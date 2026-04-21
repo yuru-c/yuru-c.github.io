@@ -816,6 +816,7 @@ html {
   text-align: left;
   padding-left: 1.6em; 
   text-indent: -1.2em;
+  font-variant-numeric: tabular-nums;
 }
 
 
@@ -1608,7 +1609,7 @@ transform: scale(1.02);
     }
 
     .c-info {
-      margin-left: 10px;
+      margin-left: 9.5px;
     }
 
     .sill-text {
@@ -1675,7 +1676,7 @@ transform: scale(1.02);
     margin: 0px;
     line-height: 1.6;
     padding-left: 1.15rem;
-    text-indent: -1.05rem;
+    text-indent: -1rem;
   }
 
 .step-box.active {
@@ -1778,7 +1779,7 @@ transform: scale(1.02);
 
 .indentation {  
   padding-left: 1.6em; 
-  text-indent: -1.08em;
+  text-indent: -1.06em;
 }
 
 .indentation-num {

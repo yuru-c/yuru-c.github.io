@@ -16,21 +16,10 @@ code, pre {
 }
 
 body {
-    font-family: 'Courier Prime', sans-serif !important;
+    font-family: 'Courier Prime', sans-serif, Courier, monospace !important;
     font-size: 18px; 
     line-height: 1.8; 
-    letter-spacing: 0.5px; 
-    /* background-image: url('./img/background2.jpg') !important;
-    background-repeat: no-repeat;
-
-    background-attachment: fixed;
-
-    background-size: cover;
-
-    background-position: center;
-    
-    background-color: #f2e6d5;
-    radial-gradient(#ffffff, #f7f3e9)*/
+    letter-spacing: 0.5px;
 }
 
 
@@ -818,6 +807,7 @@ html {
   text-indent: -1.2em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
+  letter-spacing: 0;
 }
 
 
@@ -1610,7 +1600,7 @@ transform: scale(1.02);
     }
 
     .c-info {
-      margin-left: 9.35px;
+      margin-left: 9.25px;
     }
 
     .sill-text {
@@ -1780,14 +1770,16 @@ transform: scale(1.02);
 
 .indentation {  
   padding-left: 1.6em; 
-  text-indent: -1.06em;
+  text-indent: -1.05em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
+  letter-spacing: 0;
 }
 
 .indentation-num {
   padding-left: 1.6em; 
   text-indent: -1.1em;
+  letter-spacing: 0;
 }
 
 .profile-text p {
@@ -1816,6 +1808,7 @@ transform: scale(1.02);
   text-indent: -1.05em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
+  letter-spacing: 0;
 }
 
 }

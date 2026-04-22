@@ -1609,7 +1609,7 @@ transform: scale(1.02);
     }
 
     .c-info {
-      margin-left: 9.5px;
+      margin-left: 9.4px;
     }
 
     .sill-text {
@@ -1780,11 +1780,16 @@ transform: scale(1.02);
 .indentation {  
   padding-left: 1.6em; 
   text-indent: -1.06em;
+  font-variant-numeric: tabular-nums;
 }
 
 .indentation-num {
   padding-left: 1.6em; 
   text-indent: -1.1em;
+}
+
+.profile-text p {
+  margin-left: -33px !important;
 }
 
 
@@ -1801,12 +1806,13 @@ transform: scale(1.02);
 
 .step-text {    
     padding-left: 1.1rem;
-    text-indent: -0.9rem; 
+    text-indent: -0.95rem; 
   }
 
   .indentation {  
   padding-left: 1.6em; 
   text-indent: -1.05em;
+  font-variant-numeric: tabular-nums;
 }
 
 }

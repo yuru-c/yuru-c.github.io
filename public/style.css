@@ -1600,7 +1600,7 @@ transform: scale(1.02);
     }
 
     .c-info {
-      margin-left: 8.55px;
+      margin-left: 8.45px;
     }
 
     .sill-text {
@@ -1807,13 +1807,13 @@ transform: scale(1.02);
 
   .indentation {  
   padding-left: 1.6em; 
-  text-indent: -1.03em;
+  text-indent: -1em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
 }
 
 .c-info {
-      margin-left: 9.25px;
+      margin-left: 8.45px;
     }
 
 }

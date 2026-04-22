@@ -919,6 +919,10 @@ html {
         margin-top 0.3s ease;
 }
 
+.c-info {
+      margin-left: -5px !important;
+    }
+
 .skill-tag i {
     margin-right: 8px;
     font-size: 18px;
@@ -1178,6 +1182,13 @@ html {
 
 .left-side-content::-webkit-scrollbar-corner {
     background-color: #826f5a; 
+}
+
+.profile-text p {
+  font-size:14px;
+  text-indent: -1.38em ;
+  margin-left:-30px; 
+  padding-left: 1.8em;
 }
 
 
@@ -1784,8 +1795,10 @@ transform: scale(1.02);
 }
 
 .profile-text p {
-  margin-left: -33px !important;  
-  text-indent: -1em;
+  font-size:14px;
+  text-indent: -1.3em ;
+  margin-left:-33px; 
+  padding-left: 1.8em;
 }
 
 
@@ -1815,5 +1828,16 @@ transform: scale(1.02);
 .c-info {
       margin-left: 8.45px;
     }
+
+  .profile-text p {
+  text-indent: -1.3em ;
+}
+
+.profile-text p {
+  font-size:14px;
+  text-indent: -1.3em ;
+  margin-left:-33px; 
+  padding-left: 1.8em;
+}
 
 }

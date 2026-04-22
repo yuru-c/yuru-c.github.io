@@ -1770,7 +1770,7 @@ transform: scale(1.02);
 
 .indentation {  
   padding-left: 1.6em; 
-  text-indent: -1.05em;
+  text-indent: -1.03em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
   letter-spacing: 0;
@@ -1779,7 +1779,10 @@ transform: scale(1.02);
 .indentation-num {
   padding-left: 1.6em; 
   text-indent: -1.1em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
   letter-spacing: 0;
+  width: 1ch;
 }
 
 .profile-text p {
@@ -1805,10 +1808,15 @@ transform: scale(1.02);
 
   .indentation {  
   padding-left: 1.6em; 
-  text-indent: -1.05em;
+  text-indent: -1.03em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
   letter-spacing: 0;
+  width: 1ch;
 }
+
+.c-info {
+      margin-left: 9.25px;
+    }
 
 }
